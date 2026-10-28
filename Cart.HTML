@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopping Bag & Checkout | Velora Fashion</title>
+<meta name="description" content="Review your Velora Fashion bag and complete a demo checkout.">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+</head>
+<body data-page="cart">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">Free shipping above ₹1,999 &nbsp;·&nbsp; Use code VELORA10 for 10% off</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo" aria-label="Velora Fashion, home"><img src="images/logo.png" alt="Velora Fashion" width="110" height="67"></a>
+    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="wishlist.html" class="icon-btn" data-wish-link aria-label="Wishlist, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.6 4.5 6.2 4.5c2 0 3.5 1.1 5.8 3.5 2.3-2.4 3.8-3.5 5.8-3.5 3.6 0 5.3 3.8 3.8 7.2C19.5 16.4 12 21 12 21z"/></svg><span class="count" data-wish-count hidden>0</span></a>
+      <a href="cart.html" class="icon-btn" data-cart-link aria-label="Shopping bag, 0 items" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="count" data-cart-count hidden>0</span></a>
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">Home</a> / Bag</p>
+    <h1>Shopping Bag & Checkout</h1>
+    <p>Review your items and complete your demo order.</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="container">
+    <p class="notice"><strong>Demo checkout:</strong> no real payment is processed and no actual order is placed.</p>
+
+    <div class="empty" id="cart-empty" hidden>
+      <h2>Your bag is empty</h2>
+      <p>Looks like you haven't added anything yet.</p>
+      <a class="btn" href="shop.html">Start Shopping</a>
+    </div>
+
+    <div class="cart-layout" id="cart-layout" hidden>
+      <div>
+        <div id="cart-items" aria-live="polite"></div>
+
+        <div class="panel">
+          <h2>Delivery Details</h2>
+          <p class="hint">Details stay in your browser and are not sent anywhere.</p>
+          <form id="checkout-form" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="k-name">Full Name *</label><input type="text" id="k-name" name="fullName" autocomplete="name" aria-describedby="k-name-err"><p class="err" id="k-name-err"></p></div>
+              <div class="field"><label for="k-email">Email *</label><input type="email" id="k-email" name="email" autocomplete="email" aria-describedby="k-email-err"><p class="err" id="k-email-err"></p></div>
+              <div class="field"><label for="k-phone">Mobile Number *</label><input type="tel" id="k-phone" name="phone" autocomplete="tel" aria-describedby="k-phone-err"><p class="err" id="k-phone-err"></p></div>
+              <div class="field"><label for="k-pin">Pincode *</label><input type="text" id="k-pin" name="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code" aria-describedby="k-pin-err"><p class="err" id="k-pin-err"></p></div>
+              <div class="field full"><label for="k-address">Delivery Address *</label><textarea id="k-address" name="address" style="min-height:90px" autocomplete="street-address" aria-describedby="k-address-err"></textarea><p class="err" id="k-address-err"></p></div>
+              <div class="field"><label for="k-city">City *</label><input type="text" id="k-city" name="city" autocomplete="address-level2" aria-describedby="k-city-err"><p class="err" id="k-city-err"></p></div>
+              <div class="field"><label for="k-state">State *</label><input type="text" id="k-state" name="state" autocomplete="address-level1" aria-describedby="k-state-err"><p class="err" id="k-state-err"></p></div>
+            </div>
+            <fieldset style="margin-top:18px"><legend>Payment method (demo)</legend>
+              <div class="pay">
+                <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery</label>
+                <label><input type="radio" name="payment" value="upi"> UPI / Card (demo only, nothing is charged)</label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <aside class="summary" aria-label="Order summary">
+        <h2>Order Summary</h2>
+        <div class="sum-row"><span>Subtotal</span><span id="sum-sub"></span></div>
+        <div class="sum-row" id="sum-disc-row" hidden><span>Coupon discount</span><span id="sum-disc"></span></div>
+        <div class="sum-row"><span>Shipping</span><span id="sum-ship"></span></div>
+        <div class="bar" aria-hidden="true"><i id="ship-bar" style="width:0"></i></div>
+        <p class="hint" id="ship-hint"></p>
+        <form class="coupon" id="coupon-form" novalidate>
+          <label for="coupon" class="sr-only">Coupon code</label>
+          <input type="text" id="coupon" placeholder="Coupon code" autocomplete="off">
+          <button type="submit" class="btn btn-sm">Apply</button>
+        </form>
+        <p class="hint ok" id="coupon-msg" role="status"></p>
+        <div class="sum-row total"><span>Total</span><span id="sum-total"></span></div>
+        <button type="submit" form="checkout-form" class="btn btn-block" style="margin-top:14px">Place Demo Order</button>
+        <p class="err" id="checkout-status" role="alert" style="margin-top:10px"></p>
+        <a href="shop.html" class="link-btn" style="display:inline-block;margin-top:8px">Continue shopping</a>
+      </aside>
+    </div>
+
+    <div class="done" id="order-done" hidden>
+      <div class="tick" aria-hidden="true">✓</div>
+      <h2>Demo order confirmed</h2>
+      <p>Thank you, <strong id="order-name"></strong>! Your demo order number is <strong id="order-id"></strong>.</p>
+      <ul id="order-lines"></ul>
+      <p class="hint">Deliver to: <span id="order-address"></span><br>Payment: <span id="order-pay"></span></p>
+      <p class="notice" style="margin:22px 0 0;text-align:left"><strong>Please note:</strong> this is a demonstration. No payment was processed, no real order was placed, and no confirmation email was sent.</p>
+      <p style="margin-top:24px"><a href="shop.html" class="btn">Continue Shopping</a></p>
+    </div>
+    <noscript><p class="notice">Please enable JavaScript to use the shopping bag.</p></noscript>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <img class="foot-logo" src="images/logo-light.png" alt="Velora Fashion" loading="lazy" width="140" height="85">
+        <p class="tagline">Elegance in Every Thread.</p>
+        <p>Women's wear designed for confidence, comfort and everyday elegance.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <a href="shop.html?category=dresses">Dresses</a>
+        <a href="shop.html?category=tops">Tops</a>
+        <a href="shop.html?category=kurtis">Kurtis</a>
+        <a href="shop.html?category=ethnic-wear">Ethnic Wear</a>
+        <a href="shop.html?category=co-ord-sets">Co-ord Sets</a>
+        <a href="shop.html?category=jeans">Jeans</a>
+        <a href="shop.html?category=skirts">Skirts</a>
+        <a href="shop.html?category=party-wear">Party Wear</a>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Shopping Bag</a>
+      </div>
+      <div>
+        <h3>Get in Touch</h3>
+        <p>123 Main Street, Your City<br>+91 98765 43210<br>hello@velorafashion.com<br>Mon–Sat, 10 AM – 8 PM</p>
+      </div>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> Velora Fashion. All rights reserved. This is a demo storefront.</p>
+  </div>
+</footer>
+</body>
+</html>

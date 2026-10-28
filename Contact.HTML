@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Velora Fashion</title>
+<meta name="description" content="Contact Velora Fashion customer support. Find FAQs, support hours and social links.">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+</head>
+<body data-page="contact">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">Free shipping above ₹1,999 &nbsp;·&nbsp; Use code VELORA10 for 10% off</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo" aria-label="Velora Fashion, home"><img src="images/logo.png" alt="Velora Fashion" width="110" height="67"></a>
+    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="wishlist.html" class="icon-btn" data-wish-link aria-label="Wishlist, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.6 4.5 6.2 4.5c2 0 3.5 1.1 5.8 3.5 2.3-2.4 3.8-3.5 5.8-3.5 3.6 0 5.3 3.8 3.8 7.2C19.5 16.4 12 21 12 21z"/></svg><span class="count" data-wish-count hidden>0</span></a>
+      <a href="cart.html" class="icon-btn" data-cart-link aria-label="Shopping bag, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="count" data-cart-count hidden>0</span></a>
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+    <h1>Contact Us</h1>
+    <p>Questions about sizes, orders or styling? We would love to help.</p>
+  </div>
+</section>
+
+<section style="padding-top:60px">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Customer Support</p>
+      <h2>We're here to help</h2>
+      <p class="lead" style="font-size:1rem">Send us a message and our team will get back to you. For quick help, call or email us during support hours.</p>
+      <ul class="contact-list">
+        <li><strong>Visit</strong>123 Main Street, Your City, India</li>
+        <li><strong>Call</strong>+91 98765 43210</li>
+        <li><strong>Email</strong>hello@velorafashion.com</li>
+        <li><strong>Support Hours</strong>Monday to Saturday, 10 AM – 8 PM</li>
+      </ul>
+      <div class="social" aria-label="Social links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h2>Send a Message</h2>
+      <p class="notice" style="margin-top:12px"><strong>Demo form:</strong> messages are checked for errors but are <strong>not actually emailed</strong>. Real email delivery needs a backend or an email service (such as Formspree, EmailJS or Web3Forms). See README.md.</p>
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="c-name">Full Name *</label><input type="text" id="c-name" name="name" autocomplete="name" aria-describedby="c-name-err"><p class="err" id="c-name-err"></p></div>
+          <div class="field"><label for="c-email">Email *</label><input type="email" id="c-email" name="email" autocomplete="email" aria-describedby="c-email-err"><p class="err" id="c-email-err"></p></div>
+          <div class="field"><label for="c-phone">Phone (optional)</label><input type="tel" id="c-phone" name="phone" autocomplete="tel" placeholder="10-digit mobile number" aria-describedby="c-phone-err"><p class="err" id="c-phone-err"></p></div>
+          <div class="field"><label for="c-subject">Subject *</label>
+            <select id="c-subject" name="subject" aria-describedby="c-subject-err">
+              <option value="">Select a subject</option><option>Order enquiry</option><option>Size &amp; fit help</option><option>Exchange</option><option>Styling advice</option><option>Other</option>
+            </select><p class="err" id="c-subject-err"></p></div>
+          <div class="field full"><label for="c-message">Message *</label><textarea id="c-message" name="message" aria-describedby="c-message-err"></textarea><p class="err" id="c-message-err"></p></div>
+        </div>
+        <button type="submit" class="btn" style="margin-top:14px">Send Message</button>
+        <p class="err" id="contact-status" role="alert" style="margin-top:12px"></p>
+      </form>
+      <div class="success" id="contact-success" role="status" hidden><strong>Thank you!</strong> Your message passed validation. (Demo: no email was sent. See the note above.)</div>
+    </div>
+  </div>
+</section>
+
+<section class="white" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="sec-head"><p class="eyebrow">Good to Know</p><h2 id="faq-title">Frequently Asked Questions</h2></div>
+    <div class="faq">
+      <details><summary>How do I find my size?</summary><p>Choose from XS to XL (waist sizes 28 to 36 for jeans). If you are between sizes, we suggest sizing up for a relaxed fit. Contact us for help.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Delivery timelines depend on your location. Add your real delivery details to this answer before launching.</p></details>
+      <details><summary>Can I exchange an item?</summary><p>Our policy allows a simple size exchange within 7 days of delivery for unworn items with tags.</p></details>
+      <details><summary>Is shipping free?</summary><p>Yes, shipping is free on orders above ₹1,999. Otherwise a flat ₹99 fee applies.</p></details>
+      <details><summary>How do I use a coupon?</summary><p>Enter your code in the coupon box on the shopping bag page. Try VELORA10 for 10% off in this demo.</p></details>
+      <details><summary>Is checkout real?</summary><p>No. This is a demo storefront: checkout shows an order confirmation but no payment is taken and no order is placed.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <img class="foot-logo" src="images/logo-light.png" alt="Velora Fashion" loading="lazy" width="140" height="85">
+        <p class="tagline">Elegance in Every Thread.</p>
+        <p>Women's wear designed for confidence, comfort and everyday elegance.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <a href="shop.html?category=dresses">Dresses</a>
+        <a href="shop.html?category=tops">Tops</a>
+        <a href="shop.html?category=kurtis">Kurtis</a>
+        <a href="shop.html?category=ethnic-wear">Ethnic Wear</a>
+        <a href="shop.html?category=co-ord-sets">Co-ord Sets</a>
+        <a href="shop.html?category=jeans">Jeans</a>
+        <a href="shop.html?category=skirts">Skirts</a>
+        <a href="shop.html?category=party-wear">Party Wear</a>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Shopping Bag</a>
+      </div>
+      <div>
+        <h3>Get in Touch</h3>
+        <p>123 Main Street, Your City<br>+91 98765 43210<br>hello@velorafashion.com<br>Mon–Sat, 10 AM – 8 PM</p>
+      </div>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> Velora Fashion. All rights reserved. This is a demo storefront.</p>
+  </div>
+</footer>
+</body>
+</html>

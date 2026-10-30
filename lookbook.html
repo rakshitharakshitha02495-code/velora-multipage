@@ -183,6 +183,7 @@ footer a:hover{color:var(--rose);padding-left:4px}
       <li><a href="index.html">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="lookbook.html" class="active">Lookbook</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="btn">Order / Enquire</a>
@@ -201,10 +202,10 @@ footer a:hover{color:var(--rose);padding-left:4px}
       <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700" alt="Look 4">
       <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=700" alt="Look 5">
       <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700" alt="Look 6">
-      <img src="https://images.unsplash.com/photo-1610030469983?w=700" alt="Look" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1583391733981?w=700" alt="Look" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1551163943?w=700" alt="Look" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1539008835657?w=700" alt="Look" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700" alt="Look" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1583391733981-8b530f9b3d63?w=700" alt="Look" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=700" alt="Look" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=700" alt="Look" loading="lazy">
     </div>
     <p style="text-align:center;margin-top:20px"><a href="shop.html" class="btn">Shop the Looks</a></p>
   </div>
@@ -215,12 +216,12 @@ footer a:hover{color:var(--rose);padding-left:4px}
     <p class="eyebrow">@velorafashions</p>
     <h2 class="section-title">Follow Us on Instagram</h2>
     <div class="insta">
-      <img src="https://images.unsplash.com/photo-1572804013309?w=500" alt="Velora style" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1610030469983?w=500" alt="Velora style" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1509631179647?w=500" alt="Velora style" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1496747611176?w=500" alt="Velora style" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1469334031218?w=500" alt="Velora style" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1539008835657?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500" alt="Velora style" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500" alt="Velora style" loading="lazy">
     </div>
   </div>
 </section>
@@ -228,7 +229,7 @@ footer a:hover{color:var(--rose);padding-left:4px}
 <footer>
   <div class="container foot">
     <div><a href="index.html" class="logo">Velora</a><p style="margin-top:8px">Elegant womenswear made for everyday confidence.</p></div>
-    <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Pinterest</a></li></ul></div>
   </div>
   <p class="copy">© Velora Fashions. All rights reserved.</p>
@@ -242,6 +243,15 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
 revealEls.forEach(el => io.observe(el));
+
+
+// Image fallback: show a soft Velora placeholder if a photo fails to load
+const PH = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f3dde0'/%3E%3Cstop offset='1' stop-color='%23c9956b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ctext x='200' y='275' font-size='120' text-anchor='middle' fill='%235b1a34' fill-opacity='.55' font-family='Georgia,serif'%3EV%3C/text%3E%3C/svg%3E";
+function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = PH; img.alt = img.alt || 'Velora'; }
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', () => fixImg(img));
+  if (img.complete && img.naturalWidth === 0) fixImg(img);
+});
 
 // Mobile menu
 const menuBtn = document.querySelector('.menu-btn');
@@ -292,3 +302,4 @@ if (form) {
 </script>
 </body>
 </html>
+

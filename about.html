@@ -52,7 +52,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 /* ---------- hero ---------- */
 .hero{min-height:88vh;display:flex;align-items:center;position:relative;color:#fff;
   background:linear-gradient(100deg,rgba(63,17,36,.88) 0%,rgba(63,17,36,.45) 55%,rgba(63,17,36,.1) 100%),
-  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
+  url('images/hero.jpg'),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
 .hero .container{max-width:1180px}
 .hero .tag{display:inline-block;letter-spacing:6px;text-transform:uppercase;font-size:.78rem;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:6px}
 .hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:20px 0;font-weight:500;max-width:720px}
@@ -63,7 +63,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 .hero .btn-outline{background:transparent;color:#fff;border-color:#fff;margin-left:12px}
 .hero .btn-outline:hover{background:#fff;color:var(--wine)}
 .page-hero{text-align:center;color:#fff;padding:100px 0;
-  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
+  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('images/banner.jpg'),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
 .page-hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
 .page-hero p{color:var(--blush);letter-spacing:2px;font-weight:300;margin-top:8px}
 
@@ -174,7 +174,7 @@ footer a:hover{color:var(--rose);padding-left:4px}
 
 /* ---------- about page ---------- */
 .about-hero{text-align:center;color:#fff;padding:130px 0 120px;
-  background:linear-gradient(rgba(63,17,36,.78),rgba(63,17,36,.78)),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
+  background:linear-gradient(rgba(63,17,36,.78),rgba(63,17,36,.78)),url('images/hero.jpg'),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
 .about-hero .tag{letter-spacing:6px;text-transform:uppercase;font-size:.78rem;color:var(--rose)}
 .about-hero h1{font-size:clamp(3rem,8vw,5.6rem);font-weight:500;margin:14px 0 8px}
 .about-hero h1 em{color:var(--blush)}
@@ -204,6 +204,12 @@ footer a:hover{color:var(--rose);padding-left:4px}
 .quote-band blockquote{font:italic 500 clamp(1.7rem,4vw,2.9rem)/1.35 'Cormorant Garamond',serif;max-width:820px;margin:0 auto 20px}
 .quote-band blockquote::before{content:"\201C";display:block;font-size:5rem;line-height:.6;color:var(--rose)}
 .quote-band cite{letter-spacing:5px;text-transform:uppercase;font-size:.78rem;color:var(--rose);font-style:normal}
+.craft{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.craft figure{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/4}
+.craft img{width:100%;height:100%;object-fit:cover;transition:transform .9s;background:var(--blush)}
+.craft figure:hover img{transform:scale(1.08)}
+.craft figcaption{position:absolute;inset:auto 0 0 0;padding:44px 16px 18px;text-align:center;color:#fff;font:500 1.35rem 'Cormorant Garamond',serif;background:linear-gradient(transparent,rgba(63,17,36,.88))}
+@media(max-width:860px){.craft{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.story{grid-template-columns:1fr;gap:40px}.story-imgs{padding:0 20px 40px 0}.quote-band{background-attachment:scroll}}
 
 </style>
@@ -236,8 +242,8 @@ footer a:hover{color:var(--rose);padding-left:4px}
 <section class="section">
   <div class="container story">
     <div class="story-imgs">
-      <img class="big" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900" alt="Velora atelier" loading="lazy">
-      <img class="small" src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500" alt="Velora detail" loading="lazy">
+      <img class="big" src="images/look2.jpg" data-remote="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900" alt="Velora atelier" loading="lazy">
+      <img class="small" src="images/look4.jpg" data-remote="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500" alt="Velora detail" loading="lazy">
     </div>
     <div>
       <span class="eyebrow" style="text-align:left">Who We Are</span>
@@ -270,6 +276,19 @@ footer a:hover{color:var(--rose);padding-left:4px}
   </div>
 </section>
 
+<section class="section" style="background:#fff">
+  <div class="container">
+    <span class="eyebrow">The Collection</span>
+    <h2 class="section-title">Crafted With Care</h2>
+    <div class="craft">
+      <figure><img src="images/look1.jpg" data-remote="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=700" alt="Elegant evening look" loading="lazy"><figcaption>Evening Wear</figcaption></figure>
+      <figure><img src="images/kurti2.jpg" data-remote="https://images.unsplash.com/photo-1583391733981-8b530f9b3d63?w=700" alt="Festive kurti" loading="lazy"><figcaption>Festive Edit</figcaption></figure>
+      <figure><img src="images/coord1.jpg" data-remote="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700" alt="Linen co-ord set" loading="lazy"><figcaption>Everyday Luxury</figcaption></figure>
+      <figure><img src="images/look4.jpg" data-remote="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700" alt="Velora style" loading="lazy"><figcaption>Signature Looks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="quote-band">
   <div class="container">
     <blockquote>Elegance is not about being noticed. It is about being remembered.</blockquote>
@@ -288,7 +307,7 @@ footer a:hover{color:var(--rose);padding-left:4px}
 <a class="wa" href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">💬</a>
 <script>
 // Scroll reveal animation
-const revealEls = document.querySelectorAll('.cat, .product, .feature, .story > *, .value, .stats .row > *, .about > *, .gallery img, .contact-info, .promo > *, .insta img, form, .section-title, .eyebrow');
+const revealEls = document.querySelectorAll('.cat, .product, .feature, .story > *, .value, .craft figure, .stats .row > *, .about > *, .gallery img, .contact-info, .promo > *, .insta img, form, .section-title, .eyebrow');
 revealEls.forEach(el => el.classList.add('reveal'));
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
@@ -310,7 +329,10 @@ function placeholder(img){
   const n = (img.alt||'').length % TONES.length, c = TONES[n];
   return "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c[0]+"'/%3E%3Cstop offset='1' stop-color='"+c[1]+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ccircle cx='320' cy='80' r='90' fill='white' fill-opacity='.18'/%3E%3Ccircle cx='60' cy='460' r='110' fill='white' fill-opacity='.14'/%3E%3Cg fill='%235b1a34' fill-opacity='.82'%3E"+SHAPES[kind].replace(/#/g,'%23')+"%3C/g%3E%3Ctext x='200' y='480' font-size='22' letter-spacing='8' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EVELORA%3C/text%3E%3C/svg%3E";
 }
-function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img); }
+function fixImg(img){
+  if (img.dataset.remote && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.remote; return; }
+  if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img);
+}
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', () => fixImg(img));
   if (img.complete && img.naturalWidth === 0) fixImg(img);
@@ -365,4 +387,3 @@ if (form) {
 </script>
 </body>
 </html>
-

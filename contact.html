@@ -247,9 +247,21 @@ const io = new IntersectionObserver(entries => {
 revealEls.forEach(el => io.observe(el));
 
 
-// Image fallback: show a soft Velora placeholder if a photo fails to load
-const PH = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f3dde0'/%3E%3Cstop offset='1' stop-color='%23c9956b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ctext x='200' y='275' font-size='120' text-anchor='middle' fill='%235b1a34' fill-opacity='.55' font-family='Georgia,serif'%3EV%3C/text%3E%3C/svg%3E";
-function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = PH; img.alt = img.alt || 'Velora'; }
+// Image fallback: if a photo fails to load, show an elegant Velora illustration
+const SHAPES = {
+  dress:'<path d="M175 105 L200 85 L225 105 L219 195 Q298 320 318 440 L82 440 Q102 320 181 195 Z"/><path d="M200 85 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  kurti:'<path d="M168 105 L200 88 L232 105 L240 175 L252 440 L214 440 L200 330 L186 440 L148 440 L160 175 Z"/><path d="M200 88 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  top:'<path d="M150 120 L200 98 L250 120 L292 170 L262 200 L242 178 L242 330 L158 330 L158 178 L138 200 L108 170 Z"/><path d="M200 98 L200 66 Q200 54 212 54" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  coord:'<path d="M165 100 L200 85 L235 100 L228 215 L172 215 Z"/><path d="M172 235 L228 235 L262 440 L138 440 Z"/><path d="M200 85 L200 58 Q200 46 212 46" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>'
+};
+const TONES = [['%23f3dde0','%23c9956b'],['%23ead7dc','%23a3335c'],['%23f6e6d8','%23c9956b'],['%23e8d0d8','%235b1a34']];
+function placeholder(img){
+  const t = ((img.alt||'') + ' ' + (img.src||'')).toLowerCase();
+  const kind = /kurti|anarkali/.test(t) ? 'kurti' : /top|shirt/.test(t) ? 'top' : /co-ord|coord/.test(t) ? 'coord' : 'dress';
+  const n = (img.alt||'').length % TONES.length, c = TONES[n];
+  return "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c[0]+"'/%3E%3Cstop offset='1' stop-color='"+c[1]+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ccircle cx='320' cy='80' r='90' fill='white' fill-opacity='.18'/%3E%3Ccircle cx='60' cy='460' r='110' fill='white' fill-opacity='.14'/%3E%3Cg fill='%235b1a34' fill-opacity='.82'%3E"+SHAPES[kind].replace(/#/g,'%23')+"%3C/g%3E%3Ctext x='200' y='480' font-size='22' letter-spacing='8' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EVELORA%3C/text%3E%3C/svg%3E";
+}
+function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img); }
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', () => fixImg(img));
   if (img.complete && img.naturalWidth === 0) fixImg(img);

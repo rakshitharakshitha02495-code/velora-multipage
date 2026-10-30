@@ -3,110 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shop | Velora Fashion</title>
-<meta name="description" content="Shop Velora Fashion women's wear: dresses, tops, kurtis, ethnic wear, co-ord sets, jeans, skirts and party wear.">
-<meta name="theme-color" content="#FAF6EE">
-<link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/script.js" defer></script>
-</head>
-<body data-page="shop">
-<a class="skip-link" href="#main">Skip to main content</a>
-<div class="topbar">Free shipping above ₹1,999 &nbsp;·&nbsp; Use code VELORA10 for 10% off</div>
+<meta name="description" content="Shop dresses, kurtis, co-ord sets and tops from Velora Fashions.">
+<title>Shop | Velora Fashions</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&display=swap');
 
-<header class="site-header">
+:root{
+  --bg:#fbf6f1;--ink:#2a1d22;--muted:#85747a;
+  --wine:#5b1a34;--wine-d:#3f1124;--rose:#c9956b;--blush:#f3dde0;
+  --card:#fff;--line:#eddfdc;
+  --shadow:0 18px 45px -18px rgba(91,26,52,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;font-weight:400;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.15}
+.container{width:min(1180px,92%);margin:auto}
+.section{padding:90px 0}
+
+/* ---------- headings ---------- */
+.eyebrow{display:block;text-align:center;color:var(--rose);text-transform:uppercase;letter-spacing:5px;font-size:.74rem;font-weight:500}
+.section-title{text-align:center;font-size:clamp(2rem,4vw,3rem);margin:8px 0 14px;color:var(--wine)}
+.section-title::after{content:"";display:block;width:60px;height:2px;margin:16px auto 0;background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+.section-title{margin-bottom:46px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;background:var(--wine);color:#fff;padding:13px 32px;border-radius:50px;border:1.5px solid var(--wine);cursor:pointer;font:500 .82rem 'Jost',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:.35s}
+.btn:hover{background:var(--rose);border-color:var(--rose);transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--rose)}
+.btn-outline{background:transparent;color:var(--wine)}
+.btn-outline:hover{background:var(--wine);border-color:var(--wine);color:#fff;box-shadow:none}
+
+/* ---------- top bar + nav ---------- */
+.topbar{background:var(--wine-d);color:#f3dde0;text-align:center;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;padding:9px 10px}
+header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font:700 2rem 'Cormorant Garamond',serif;color:var(--wine);letter-spacing:6px;text-transform:uppercase}
+.nav ul{display:flex;gap:38px}
+.nav ul a{font-size:.8rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;position:relative;padding:6px 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--rose);transition:.35s}
+.nav ul a:hover::after,.nav ul a.active::after{width:100%}
+.nav ul a.active{color:var(--wine)}
+.menu-btn{display:none;background:none;border:0;font-size:1.8rem;color:var(--wine);cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{min-height:88vh;display:flex;align-items:center;position:relative;color:#fff;
+  background:linear-gradient(100deg,rgba(63,17,36,.88) 0%,rgba(63,17,36,.45) 55%,rgba(63,17,36,.1) 100%),
+  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
+.hero .container{max-width:1180px}
+.hero .tag{display:inline-block;letter-spacing:6px;text-transform:uppercase;font-size:.78rem;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:6px}
+.hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:20px 0;font-weight:500;max-width:720px}
+.hero h1 em{color:var(--blush);font-style:italic}
+.hero p{max-width:470px;margin-bottom:36px;font-weight:300;font-size:1.08rem;color:#f3e6e8}
+.hero .btn{background:var(--rose);border-color:var(--rose)}
+.hero .btn:hover{background:#fff;color:var(--wine);border-color:#fff}
+.hero .btn-outline{background:transparent;color:#fff;border-color:#fff;margin-left:12px}
+.hero .btn-outline:hover{background:#fff;color:var(--wine)}
+.page-hero{text-align:center;color:#fff;padding:100px 0;
+  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
+.page-hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
+.page-hero p{color:var(--blush);letter-spacing:2px;font-weight:300;margin-top:8px}
+
+/* ---------- categories ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.cat{position:relative;border-radius:200px 200px 18px 18px;overflow:hidden;aspect-ratio:3/4.3;box-shadow:var(--shadow)}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.cat:hover img{transform:scale(1.1)}
+.cat .label{position:absolute;inset:auto 0 0 0;padding:60px 20px 26px;text-align:center;color:#fff;background:linear-gradient(transparent,rgba(63,17,36,.9))}
+.cat .label h3{font-size:1.9rem;font-weight:500}
+.cat .label span{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--rose);display:inline-block;transition:.3s}
+.cat:hover .label span{transform:translateX(6px)}
+
+/* ---------- shop ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:44px}
+.filters button{border:1.5px solid var(--line);background:transparent;padding:9px 26px;border-radius:50px;cursor:pointer;font:500 .78rem 'Jost',sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}
+.filters button.active,.filters button:hover{background:var(--wine);color:#fff;border-color:var(--wine)}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:30px}
+.product{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 22px -10px rgba(91,26,52,.2);position:relative;transition:.5s}
+.product:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.product img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s}
+.product:hover img{transform:scale(1.06)}
+.product .info{padding:20px 22px 24px;text-align:center;position:relative;background:#fff}
+.product h3{font-size:1.35rem;font-weight:600;color:var(--wine)}
+.price{margin:6px 0 16px;color:var(--rose);font-weight:500;font-size:1.05rem;letter-spacing:1px}
+.price s{color:var(--muted);font-weight:300;margin-left:8px;font-size:.9rem}
+.product .btn{padding:10px 26px;font-size:.74rem}
+.badge{position:absolute;top:16px;left:16px;z-index:2;background:var(--wine);color:#fff;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:50px}
+.product.hide{display:none}
+
+/* ---------- features ---------- */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;text-align:center}
+.feature{background:#fff;padding:38px 22px;border-radius:18px;border:1px solid var(--line);transition:.4s}
+.feature:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--rose)}
+.feature .ico{width:66px;height:66px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:50%;background:var(--blush)}
+.feature h3{font-size:1.4rem;color:var(--wine);margin-bottom:4px}
+.feature p{color:var(--muted);font-size:.92rem;font-weight:300}
+
+/* ---------- lookbook ---------- */
+.gallery{columns:3 270px;column-gap:22px}
+.gallery img{width:100%;margin-bottom:22px;border-radius:16px;box-shadow:0 8px 24px -12px rgba(91,26,52,.35);transition:.6s}
+.gallery img:hover{transform:scale(1.03);box-shadow:var(--shadow)}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about img{border-radius:220px 220px 20px 20px;box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.about h2{font-size:clamp(2rem,4vw,3rem);color:var(--wine);margin:10px 0}
+.about p{color:var(--muted);margin:14px 0 28px;font-weight:300;font-size:1.05rem}
+
+/* ---------- contact ---------- */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:34px;align-items:start}
+.contact-info{background:linear-gradient(160deg,var(--wine),var(--wine-d));color:#f3e6e8;padding:42px 34px;border-radius:20px;box-shadow:var(--shadow)}
+.contact-info h3{font-size:2rem;color:#fff;margin-bottom:12px}
+.contact-info li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font-weight:300}
+form{background:#fff;padding:38px;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form .full{grid-column:1/-1}
+label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:var(--wine);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-weight:300;background:var(--bg);transition:.3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rose);background:#fff;box-shadow:0 0 0 4px rgba(201,149,107,.18)}
+
+/* ---------- promo + insta + extras ---------- */
+.promo{display:grid;grid-template-columns:1.1fr 1fr;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(150deg,var(--wine),var(--wine-d));color:#fff}
+.promo-imgs{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.promo-imgs img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.promo-text{padding:60px 50px;display:flex;flex-direction:column;justify-content:center}
+.promo-text .tag{letter-spacing:5px;text-transform:uppercase;font-size:.75rem;color:var(--rose)}
+.promo-text h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0;font-weight:500}
+.promo-text p{color:#ead7dc;font-weight:300;margin-bottom:26px}
+.promo-text .btn{align-self:flex-start;background:var(--rose);border-color:var(--rose)}
+.promo-text .btn:hover{background:#fff;color:var(--wine);border-color:#fff}
+.insta{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.insta img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;transition:.5s}
+.insta img:hover{transform:scale(1.06);box-shadow:var(--shadow)}
+.side-img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;margin-bottom:22px}
+@media(max-width:860px){.promo{grid-template-columns:1fr}.promo-imgs img{min-height:280px}.promo-text{padding:36px 26px}.insta{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- footer ---------- */
+footer{background:var(--wine-d);color:#e6d3d8;padding:70px 0 22px;margin-top:40px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer .logo{color:#fff;font-size:1.8rem}
+footer p{font-weight:300}
+footer h4{font:600 1.3rem 'Cormorant Garamond',serif;color:var(--rose);letter-spacing:2px;margin-bottom:14px}
+footer li{margin-bottom:8px;font-size:.92rem;font-weight:300}
+footer a{transition:.3s}
+footer a:hover{color:var(--rose);padding-left:4px}
+.copy{text-align:center;font-size:.78rem;letter-spacing:2px;margin-top:44px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;color:#b99aa4}
+.wa{position:fixed;right:22px;bottom:22px;background:#25d366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 10px 26px -6px rgba(0,0,0,.4);z-index:60;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .section{padding:64px 0}
+  .menu-btn{display:block}
+  .nav ul{position:absolute;top:78px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 6%;display:none;border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+  .nav ul li{padding:12px 0;border-bottom:1px solid var(--line)}
+  .nav>.btn{display:none}
+  .about,.contact-wrap,.foot{grid-template-columns:1fr}
+  .about{gap:36px}
+  form{grid-template-columns:1fr;padding:26px}
+  .hero{background-position:70% center}
+  .hero .btn-outline{margin:12px 0 0}
+}
+
+</style>
+</head>
+<body>
+<div class="topbar">Free shipping on orders above ₹1,999 · New Festive Collection is here</div>
+<header>
   <div class="container nav">
-    <a href="index.html" class="logo" aria-label="Velora Fashion, home"><img src="images/logo.png" alt="Velora Fashion" width="110" height="67"></a>
-    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="shop.html" aria-current="page">Shop</a>
-        <a href="collections.html">Collections</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-icons">
-      <a href="wishlist.html" class="icon-btn" data-wish-link aria-label="Wishlist, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.6 4.5 6.2 4.5c2 0 3.5 1.1 5.8 3.5 2.3-2.4 3.8-3.5 5.8-3.5 3.6 0 5.3 3.8 3.8 7.2C19.5 16.4 12 21 12 21z"/></svg><span class="count" data-wish-count hidden>0</span></a>
-      <a href="cart.html" class="icon-btn" data-cart-link aria-label="Shopping bag, 0 items"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="count" data-cart-count hidden>0</span></a>
-      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
+    <a href="index.html" class="logo">Velora</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="lookbook.html">Lookbook</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn">Order / Enquire</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
   </div>
 </header>
 
-<main id="main">
-<section class="page-hero">
-  <div class="container">
-    <p class="crumbs"><a href="index.html">Home</a> / Shop</p>
-    <h1>Shop All Styles</h1>
-    <p>Search, filter and sort our women's wear collection.</p>
-  </div>
-</section>
+<section class="page-hero"><div class="container"><h1>Shop</h1><p>Our favourite styles, ready for you</p></div></section>
 
-<section style="padding-top:50px">
+<section class="section">
   <div class="container">
-    <form id="search-form" class="toolbar" role="search" aria-label="Product search and filters">
-      <div class="field"><label for="search">Search</label><input type="search" id="search" placeholder="Search dresses, kurtis, linen, rose..." autocomplete="off"></div>
-      <div class="field"><label for="collection">Collection</label><select id="collection"></select></div>
-      <div class="field"><label for="sort">Sort by</label>
-        <select id="sort">
-          <option value="featured">Featured</option>
-          <option value="low">Price: Low to High</option>
-          <option value="high">Price: High to Low</option>
-          <option value="new">Newest</option>
-          <option value="az">Name: A to Z</option>
-        </select></div>
-    </form>
-    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
-    <div class="result-info" aria-live="polite"><span id="result-filters"></span><strong id="result-count"></strong></div>
-    <div class="grid" id="shop-grid"></div>
-    <div class="empty" id="shop-empty" hidden>
-      <h2>No styles found</h2>
-      <p>Try a different search or clear your filters.</p>
-      <button type="button" class="btn" id="clear-filters">Clear Filters</button>
+    <div class="filters">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="dresses">Dresses</button>
+      <button data-filter="kurtis">Kurtis</button>
+      <button data-filter="coords">Co-ords</button>
+      <button data-filter="tops">Tops</button>
     </div>
-    <noscript><p class="notice">Please enable JavaScript to browse the shop.</p></noscript>
+    <div class="products">
+      <div class="product" data-cat="dresses"><span class="badge">New</span><img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600" alt="Floral Midi Dress"><div class="info"><h3>Floral Midi Dress</h3><p class="price">₹1,799</p><a class="btn btn-outline" href="contact.html?product=Floral%20Midi%20Dress">Enquire</a></div></div>
+      <div class="product" data-cat="dresses"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600" alt="Satin Evening Dress"><div class="info"><h3>Satin Evening Dress</h3><p class="price">₹2,499 <s>₹3,200</s></p><a class="btn btn-outline" href="contact.html?product=Satin%20Evening%20Dress">Enquire</a></div></div>
+      <div class="product" data-cat="kurtis"><span class="badge">Bestseller</span><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600" alt="Embroidered Cotton Kurti"><div class="info"><h3>Embroidered Cotton Kurti</h3><p class="price">₹999</p><a class="btn btn-outline" href="contact.html?product=Embroidered%20Cotton%20Kurti">Enquire</a></div></div>
+      <div class="product" data-cat="kurtis"><img src="https://images.unsplash.com/photo-1583391733981-8b530f9b3d63?w=600" alt="Festive Anarkali Kurti"><div class="info"><h3>Festive Anarkali Kurti</h3><p class="price">₹1,599</p><a class="btn btn-outline" href="contact.html?product=Festive%20Anarkali%20Kurti">Enquire</a></div></div>
+      <div class="product" data-cat="coords"><span class="badge">New</span><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600" alt="Linen Co-ord Set"><div class="info"><h3>Linen Co-ord Set</h3><p class="price">₹1,899</p><a class="btn btn-outline" href="contact.html?product=Linen%20Co-ord%20Set">Enquire</a></div></div>
+      <div class="product" data-cat="coords"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600" alt="Printed Co-ord Set"><div class="info"><h3>Printed Co-ord Set</h3><p class="price">₹1,699 <s>₹2,100</s></p><a class="btn btn-outline" href="contact.html?product=Printed%20Co-ord%20Set">Enquire</a></div></div>
+      <div class="product" data-cat="tops"><img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600" alt="Ruffle Top"><div class="info"><h3>Ruffle Top</h3><p class="price">₹799</p><a class="btn btn-outline" href="contact.html?product=Ruffle%20Top">Enquire</a></div></div>
+      <div class="product" data-cat="tops"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600" alt="Classic Shirt"><div class="info"><h3>Classic Shirt</h3><p class="price">₹899</p><a class="btn btn-outline" href="contact.html?product=Classic%20Shirt">Enquire</a></div></div>
+    </div>
   </div>
 </section>
-
-</main>
 
 <footer>
-  <div class="container">
-    <div class="foot">
-      <div>
-        <img class="foot-logo" src="images/logo-light.png" alt="Velora Fashion" loading="lazy" width="140" height="85">
-        <p class="tagline">Elegance in Every Thread.</p>
-        <p>Women's wear designed for confidence, comfort and everyday elegance.</p>
-      </div>
-      <div>
-        <h3>Shop</h3>
-        <a href="shop.html?category=dresses">Dresses</a>
-        <a href="shop.html?category=tops">Tops</a>
-        <a href="shop.html?category=kurtis">Kurtis</a>
-        <a href="shop.html?category=ethnic-wear">Ethnic Wear</a>
-        <a href="shop.html?category=co-ord-sets">Co-ord Sets</a>
-        <a href="shop.html?category=jeans">Jeans</a>
-        <a href="shop.html?category=skirts">Skirts</a>
-        <a href="shop.html?category=party-wear">Party Wear</a>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <a href="index.html">Home</a>
-        <a href="collections.html">Collections</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="wishlist.html">Wishlist</a>
-        <a href="cart.html">Shopping Bag</a>
-      </div>
-      <div>
-        <h3>Get in Touch</h3>
-        <p>123 Main Street, Your City<br>+91 98765 43210<br>hello@velorafashion.com<br>Mon–Sat, 10 AM – 8 PM</p>
-      </div>
-    </div>
-    <p class="copy">&copy; <span id="year">2026</span> Velora Fashion. All rights reserved. This is a demo storefront.</p>
+  <div class="container foot">
+    <div><a href="index.html" class="logo">Velora</a><p style="margin-top:8px">Elegant womenswear made for everyday confidence.</p></div>
+    <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Pinterest</a></li></ul></div>
   </div>
+  <p class="copy">© Velora Fashions. All rights reserved.</p>
 </footer>
+<a class="wa" href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">💬</a>
+<script>
+// Scroll reveal animation
+const revealEls = document.querySelectorAll('.cat, .product, .feature, .about > *, .gallery img, .contact-info, .promo > *, .insta img, form, .section-title, .eyebrow');
+revealEls.forEach(el => el.classList.add('reveal'));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+// Mobile menu
+const menuBtn = document.querySelector('.menu-btn');
+const navList = document.querySelector('.nav ul');
+if (menuBtn) menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
+
+// Shop filters
+document.querySelectorAll('.filters button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.product').forEach(p => {
+      p.classList.toggle('hide', f !== 'all' && p.dataset.cat !== f);
+    });
+  });
+});
+
+// Open shop with ?cat=dresses filter pre-selected
+const params = new URLSearchParams(location.search);
+const catParam = params.get('cat');
+if (catParam) {
+  const b = document.querySelector(`.filters button[data-filter="${catParam}"]`);
+  if (b) b.click();
+}
+
+// Contact form: prefill product + send to WhatsApp
+const form = document.getElementById('enquiry-form');
+if (form) {
+  if (params.get('product')) form.product.value = params.get('product');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const msg =
+      `Hello Velora Fashions,%0A` +
+      `Name: ${encodeURIComponent(d.get('name'))}%0A` +
+      `Phone: ${encodeURIComponent(d.get('phone'))}%0A` +
+      `Email: ${encodeURIComponent(d.get('email') || '-')}%0A` +
+      `Category: ${encodeURIComponent(d.get('category'))}%0A` +
+      `Size: ${encodeURIComponent(d.get('size') || '-')}%0A` +
+      `Product: ${encodeURIComponent(d.get('product') || '-')}%0A` +
+      `Address: ${encodeURIComponent(d.get('address') || '-')}%0A` +
+      `Message: ${encodeURIComponent(d.get('message'))}`;
+    window.open('https://wa.me/919876543210?text=' + msg, '_blank');
+  });
+}
+
+</script>
 </body>
 </html>

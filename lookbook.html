@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,4 +304,20 @@ if (form) {
 </script>
 </body>
 </html>
+    const msg =
+      `Hello Velora Fashions,%0A` +
+      `Name: ${encodeURIComponent(d.get('name'))}%0A` +
+      `Phone: ${encodeURIComponent(d.get('phone'))}%0A` +
+      `Email: ${encodeURIComponent(d.get('email') || '-')}%0A` +
+      `Category: ${encodeURIComponent(d.get('category'))}%0A` +
+      `Size: ${encodeURIComponent(d.get('size') || '-')}%0A` +
+      `Product: ${encodeURIComponent(d.get('product') || '-')}%0A` +
+      `Address: ${encodeURIComponent(d.get('address') || '-')}%0A` +
+      `Message: ${encodeURIComponent(d.get('message'))}`;
+    window.open('https://wa.me/919876543210?text=' + msg, '_blank');
+  });
+}
 
+</script>
+</body>
+</html>

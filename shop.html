@@ -52,7 +52,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 /* ---------- hero ---------- */
 .hero{min-height:88vh;display:flex;align-items:center;position:relative;color:#fff;
   background:linear-gradient(100deg,rgba(63,17,36,.88) 0%,rgba(63,17,36,.45) 55%,rgba(63,17,36,.1) 100%),
-  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
+  url('images/hero.jpg'),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
 .hero .container{max-width:1180px}
 .hero .tag{display:inline-block;letter-spacing:6px;text-transform:uppercase;font-size:.78rem;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:6px}
 .hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:20px 0;font-weight:500;max-width:720px}
@@ -63,7 +63,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 .hero .btn-outline{background:transparent;color:#fff;border-color:#fff;margin-left:12px}
 .hero .btn-outline:hover{background:#fff;color:var(--wine)}
 .page-hero{text-align:center;color:#fff;padding:100px 0;
-  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
+  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('images/banner.jpg'),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
 .page-hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
 .page-hero p{color:var(--blush);letter-spacing:2px;font-weight:300;margin-top:8px}
 
@@ -203,14 +203,14 @@ footer a:hover{color:var(--rose);padding-left:4px}
       <button data-filter="tops">Tops</button>
     </div>
     <div class="products">
-      <div class="product" data-cat="dresses"><span class="badge">New</span><img onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600'" src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600" alt="Floral Midi Dress"><div class="info"><h3>Floral Midi Dress</h3><p class="price">₹1,799</p><a class="btn btn-outline" href="contact.html?product=Floral%20Midi%20Dress">Enquire</a></div></div>
-      <div class="product" data-cat="dresses"><img onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600'" src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600" alt="Satin Evening Dress"><div class="info"><h3>Satin Evening Dress</h3><p class="price">₹2,499 <s>₹3,200</s></p><a class="btn btn-outline" href="contact.html?product=Satin%20Evening%20Dress">Enquire</a></div></div>
-      <div class="product" data-cat="kurtis"><span class="badge">Bestseller</span><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600" alt="Embroidered Cotton Kurti"><div class="info"><h3>Embroidered Cotton Kurti</h3><p class="price">₹999</p><a class="btn btn-outline" href="contact.html?product=Embroidered%20Cotton%20Kurti">Enquire</a></div></div>
-      <div class="product" data-cat="kurtis"><img src="https://images.unsplash.com/photo-1583391733981-8b530f9b3d63?w=600" alt="Festive Anarkali Kurti"><div class="info"><h3>Festive Anarkali Kurti</h3><p class="price">₹1,599</p><a class="btn btn-outline" href="contact.html?product=Festive%20Anarkali%20Kurti">Enquire</a></div></div>
-      <div class="product" data-cat="coords"><span class="badge">New</span><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600" alt="Linen Co-ord Set"><div class="info"><h3>Linen Co-ord Set</h3><p class="price">₹1,899</p><a class="btn btn-outline" href="contact.html?product=Linen%20Co-ord%20Set">Enquire</a></div></div>
-      <div class="product" data-cat="coords"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600" alt="Printed Co-ord Set"><div class="info"><h3>Printed Co-ord Set</h3><p class="price">₹1,699 <s>₹2,100</s></p><a class="btn btn-outline" href="contact.html?product=Printed%20Co-ord%20Set">Enquire</a></div></div>
-      <div class="product" data-cat="tops"><img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600" alt="Ruffle Top"><div class="info"><h3>Ruffle Top</h3><p class="price">₹799</p><a class="btn btn-outline" href="contact.html?product=Ruffle%20Top">Enquire</a></div></div>
-      <div class="product" data-cat="tops"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600" alt="Classic Shirt"><div class="info"><h3>Classic Shirt</h3><p class="price">₹899</p><a class="btn btn-outline" href="contact.html?product=Classic%20Shirt">Enquire</a></div></div>
+      <div class="product" data-cat="dresses"><span class="badge">New</span><img onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600'" src="images/dress1.jpg" data-remote="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600" alt="Floral Midi Dress"><div class="info"><h3>Floral Midi Dress</h3><p class="price">₹1,799</p><a class="btn btn-outline" href="contact.html?product=Floral%20Midi%20Dress">Enquire</a></div></div>
+      <div class="product" data-cat="dresses"><img onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600'" src="images/dress2.jpg" data-remote="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600" alt="Satin Evening Dress"><div class="info"><h3>Satin Evening Dress</h3><p class="price">₹2,499 <s>₹3,200</s></p><a class="btn btn-outline" href="contact.html?product=Satin%20Evening%20Dress">Enquire</a></div></div>
+      <div class="product" data-cat="kurtis"><span class="badge">Bestseller</span><img src="images/kurti1.jpg" data-remote="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600" alt="Embroidered Cotton Kurti"><div class="info"><h3>Embroidered Cotton Kurti</h3><p class="price">₹999</p><a class="btn btn-outline" href="contact.html?product=Embroidered%20Cotton%20Kurti">Enquire</a></div></div>
+      <div class="product" data-cat="kurtis"><img src="images/kurti2.jpg" data-remote="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600|https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600|https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600|https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600" alt="Festive Anarkali Kurti"><div class="info"><h3>Festive Anarkali Kurti</h3><p class="price">₹1,599</p><a class="btn btn-outline" href="contact.html?product=Festive%20Anarkali%20Kurti">Enquire</a></div></div>
+      <div class="product" data-cat="coords"><span class="badge">New</span><img src="images/coord1.jpg" data-remote="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600" alt="Linen Co-ord Set"><div class="info"><h3>Linen Co-ord Set</h3><p class="price">₹1,899</p><a class="btn btn-outline" href="contact.html?product=Linen%20Co-ord%20Set">Enquire</a></div></div>
+      <div class="product" data-cat="coords"><img src="images/coord2.jpg" data-remote="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600" alt="Printed Co-ord Set"><div class="info"><h3>Printed Co-ord Set</h3><p class="price">₹1,699 <s>₹2,100</s></p><a class="btn btn-outline" href="contact.html?product=Printed%20Co-ord%20Set">Enquire</a></div></div>
+      <div class="product" data-cat="tops"><img src="images/top1.jpg" data-remote="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600" alt="Ruffle Top"><div class="info"><h3>Ruffle Top</h3><p class="price">₹799</p><a class="btn btn-outline" href="contact.html?product=Ruffle%20Top">Enquire</a></div></div>
+      <div class="product" data-cat="tops"><img src="images/top2.jpg" data-remote="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600" alt="Classic Shirt"><div class="info"><h3>Classic Shirt</h3><p class="price">₹899</p><a class="btn btn-outline" href="contact.html?product=Classic%20Shirt">Enquire</a></div></div>
     </div>
   </div>
 </section>
@@ -234,9 +234,25 @@ const io = new IntersectionObserver(entries => {
 revealEls.forEach(el => io.observe(el));
 
 
-// Image fallback: show a soft Velora placeholder if a photo fails to load
-const PH = "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f3dde0'/%3E%3Cstop offset='1' stop-color='%23c9956b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ctext x='200' y='275' font-size='120' text-anchor='middle' fill='%235b1a34' fill-opacity='.55' font-family='Georgia,serif'%3EV%3C/text%3E%3C/svg%3E";
-function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = PH; img.alt = img.alt || 'Velora'; }
+// Image fallback: if a photo fails to load, show an elegant Velora illustration
+const SHAPES = {
+  dress:'<path d="M175 105 L200 85 L225 105 L219 195 Q298 320 318 440 L82 440 Q102 320 181 195 Z"/><path d="M200 85 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  kurti:'<path d="M168 105 L200 88 L232 105 L240 175 L252 440 L214 440 L200 330 L186 440 L148 440 L160 175 Z"/><path d="M200 88 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  top:'<path d="M150 120 L200 98 L250 120 L292 170 L262 200 L242 178 L242 330 L158 330 L158 178 L138 200 L108 170 Z"/><path d="M200 98 L200 66 Q200 54 212 54" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  coord:'<path d="M165 100 L200 85 L235 100 L228 215 L172 215 Z"/><path d="M172 235 L228 235 L262 440 L138 440 Z"/><path d="M200 85 L200 58 Q200 46 212 46" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>'
+};
+const TONES = [['%23f3dde0','%23c9956b'],['%23ead7dc','%23a3335c'],['%23f6e6d8','%23c9956b'],['%23e8d0d8','%235b1a34']];
+function placeholder(img){
+  const t = ((img.alt||'') + ' ' + (img.src||'')).toLowerCase();
+  const kind = /kurti|anarkali/.test(t) ? 'kurti' : /top|shirt/.test(t) ? 'top' : /co-ord|coord/.test(t) ? 'coord' : 'dress';
+  const n = (img.alt||'').length % TONES.length, c = TONES[n];
+  return "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c[0]+"'/%3E%3Cstop offset='1' stop-color='"+c[1]+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ccircle cx='320' cy='80' r='90' fill='white' fill-opacity='.18'/%3E%3Ccircle cx='60' cy='460' r='110' fill='white' fill-opacity='.14'/%3E%3Cg fill='%235b1a34' fill-opacity='.82'%3E"+SHAPES[kind].replace(/#/g,'%23')+"%3C/g%3E%3Ctext x='200' y='480' font-size='22' letter-spacing='8' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EVELORA%3C/text%3E%3C/svg%3E";
+}
+function fixImg(img){
+  const q = (img.dataset.queue !== undefined ? img.dataset.queue : (img.dataset.remote || '')).split('|').filter(Boolean);
+  if (q.length) { img.src = q.shift(); img.dataset.queue = q.join('|'); return; }
+  if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img);
+}
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', () => fixImg(img));
   if (img.complete && img.naturalWidth === 0) fixImg(img);
@@ -291,4 +307,3 @@ if (form) {
 </script>
 </body>
 </html>
- 

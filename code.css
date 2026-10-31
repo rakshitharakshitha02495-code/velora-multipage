@@ -1,65 +1,76 @@
-/* Velora theme: matches logo (blush pink + black ink).
-   Link AFTER your existing stylesheet:
-   <link rel="stylesheet" href="velora-theme.css"> */
-
+/* Velora theme: logo pink + logo black. Load AFTER the page's inline <style>. */
 :root{
-  --blush:#E7C9C9;      /* logo background */
-  --blush-light:#F6E9E8;
-  --blush-deep:#D6A9AD;
-  --rose:#B9757F;       /* accent for buttons/hover */
-  --ink:#141010;        /* logo black */
+  --bg:#E7C9C9;          /* exact logo background */
+  --ink:#141010;         /* logo black */
+  --muted:#5a4649;
+  --wine:#141010;        /* old wine -> logo black */
+  --wine-d:#141010;
+  --rose:#7E3F4A;        /* deep rose accent */
+  --blush:#F3E1E0;
+  --card:#F8ECEB;
+  --line:#CFA8AB;
+  --shadow:0 18px 45px -18px rgba(20,16,16,.35);
 }
-
-html{scroll-behavior:smooth}
-
 body{
-  color:var(--ink);
-  background-color:var(--blush-light);
+  background-color:#E7C9C9;
   background-image:
-    url("images/logo-small.png"),
-    radial-gradient(120% 80% at 100% 0%, var(--blush) 0%, transparent 60%),
-    radial-gradient(90% 70% at 0% 100%, var(--blush-deep) 0%, transparent 55%);
-  background-repeat:no-repeat;
-  background-position:right -120px bottom -60px, 0 0, 0 0;
-  background-size:min(70vw,720px) auto, auto, auto;
+    radial-gradient(70% 45% at 100% 0%,#F1DEDD 0%,transparent 65%),
+    radial-gradient(60% 45% at 0% 100%,#DDB5B8 0%,transparent 65%);
   background-attachment:fixed;
-}
-/* make the logo watermark very faint */
-body::before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:var(--blush-light);opacity:.93;
+  color:var(--ink);
 }
 
-/* Header + logo */
-header,.navbar,nav.top{
-  background:rgba(231,201,201,.92);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid rgba(20,16,16,.15);
+/* top bar, header, logo */
+.topbar{background:var(--ink);color:#E7C9C9}
+header{background:#E7C9C9;backdrop-filter:none;border-bottom:1px solid rgba(20,16,16,.18)}
+.nav{height:92px}
+.logo img{height:76px;width:auto;display:block}
+footer .logo img{height:96px}
+.nav ul a.active{color:var(--ink)}
+@media(max-width:860px){.nav{height:80px}.nav ul{top:80px}.logo img{height:62px}}
+
+/* hero + inner page banners: pink design, no dark photo overlay */
+.hero,.page-hero{
+  color:var(--ink);
+  background:
+    radial-gradient(520px 520px at 88% 20%,rgba(255,255,255,.35),transparent 70%),
+    radial-gradient(620px 620px at 8% 110%,#D6A9AD,transparent 70%),
+    linear-gradient(135deg,#EBD2D1 0%,#E7C9C9 55%,#DDB5B8 100%);
 }
-.logo img,.site-logo{height:56px;width:auto;display:block}
-.footer-logo{height:64px;width:auto}
+.hero .tag{color:var(--ink);border-color:var(--ink)}
+.hero h1 em{color:var(--rose)}
+.hero p,.page-hero p{color:#3a2b2e}
+.hero .btn{background:var(--ink);border-color:var(--ink);color:#E7C9C9}
+.hero .btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.hero .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.hero .btn-outline:hover{background:var(--ink);color:#E7C9C9}
 
-/* Top announcement bar */
-.announcement,.topbar,.promo-bar{background:var(--ink);color:var(--blush)}
+/* buttons */
+.btn{color:#E7C9C9}
+.btn:hover{color:#fff}
+.btn-outline{color:var(--ink)}
+.btn-outline:hover{color:#E7C9C9}
 
-/* Headings echo the logo's serif */
-h1,h2,h3{font-family:"Cinzel","Cormorant Garamond",Georgia,serif;color:var(--ink);letter-spacing:.02em}
+/* sections and cards */
+.section[style]{background:#F3E1E0 !important}
+.product,.product .info,.feature,form{background:var(--card)}
+.feature .ico{background:#E7C9C9}
+.cat .label{background:linear-gradient(transparent,rgba(20,16,16,.85))}
+.cat .label span{color:#E7C9C9}
+input,select,textarea{background:#F3E1E0}
+input:focus,select:focus,textarea:focus{background:#fff}
 
-/* Buttons */
-.btn,button,a.button,.hero a[href*="shop"],.hero a[href*="contact"]{
-  background:var(--ink);color:var(--blush);border:1px solid var(--ink);
-  border-radius:0;transition:background .2s,color .2s;
-}
-.btn:hover,button:hover,a.button:hover{background:var(--rose);border-color:var(--rose);color:#fff}
-.btn.secondary,.btn-outline{background:transparent;color:var(--ink)}
+/* promo + contact panel in logo black */
+.promo,.contact-info{background:linear-gradient(150deg,#141010,#2b2022);color:#E7C9C9}
+.promo-text p,.contact-info li{color:#E7C9C9}
+.promo-text .btn{background:#E7C9C9;border-color:#E7C9C9;color:var(--ink)}
+.promo-text .btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.promo-text .tag{color:#E7C9C9}
 
-/* Sections alternate in logo tones */
-section:nth-of-type(even){background:rgba(231,201,201,.55)}
-.card,.product,.category{background:var(--blush-light);border:1px solid rgba(20,16,16,.12)}
-
-/* Footer */
-footer{background:var(--ink);color:var(--blush)}
-footer a{color:var(--blush)}
-footer a:hover{color:#fff}
+/* footer in logo pink */
+footer{background:#E7C9C9;color:var(--ink);border-top:1px solid rgba(20,16,16,.18)}
+footer h4{color:var(--rose)}
+footer a:hover{color:var(--rose)}
+.copy{color:#5a4649;border-top-color:rgba(20,16,16,.18)}
 
 :focus-visible{outline:2px solid var(--rose);outline-offset:3px}

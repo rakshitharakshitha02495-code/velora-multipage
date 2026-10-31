@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Order or enquire at Velora Fashions.">
-<title>Contact | Velora Fashions</title>
+<meta name="description" content="Order or enquire at Velora Fashion.">
+<title>Contact | Velora Fashion</title>
+<link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&display=swap');
@@ -52,7 +53,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 /* ---------- hero ---------- */
 .hero{min-height:88vh;display:flex;align-items:center;position:relative;color:#fff;
   background:linear-gradient(100deg,rgba(63,17,36,.88) 0%,rgba(63,17,36,.45) 55%,rgba(63,17,36,.1) 100%),
-  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
+  url('images/hero.jpg'),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800') center/cover}
 .hero .container{max-width:1180px}
 .hero .tag{display:inline-block;letter-spacing:6px;text-transform:uppercase;font-size:.78rem;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:6px}
 .hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:20px 0;font-weight:500;max-width:720px}
@@ -63,7 +64,7 @@ header{background:rgba(251,246,241,.88);backdrop-filter:blur(14px);position:stic
 .hero .btn-outline{background:transparent;color:#fff;border-color:#fff;margin-left:12px}
 .hero .btn-outline:hover{background:#fff;color:var(--wine)}
 .page-hero{text-align:center;color:#fff;padding:100px 0;
-  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
+  background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('images/banner.jpg'),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1800') center/cover}
 .page-hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
 .page-hero p{color:var(--blush);letter-spacing:2px;font-weight:300;margin-top:8px}
 
@@ -127,7 +128,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rose);ba
 /* ---------- promo + insta + extras ---------- */
 .promo{display:grid;grid-template-columns:1.1fr 1fr;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(150deg,var(--wine),var(--wine-d));color:#fff}
 .promo-imgs{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.pi{overflow:hidden;min-height:420px}
 .promo-imgs img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.pi:first-child img{object-position:50% 90%;transform:scale(1.7);transform-origin:50% 85%}
 .promo-text{padding:60px 50px;display:flex;flex-direction:column;justify-content:center}
 .promo-text .tag{letter-spacing:5px;text-transform:uppercase;font-size:.75rem;color:var(--rose)}
 .promo-text h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0;font-weight:500}
@@ -173,70 +176,59 @@ footer a:hover{color:var(--rose);padding-left:4px}
 }
 
 </style>
+
+<link rel="stylesheet" href="velora-theme.css">
 </head>
 <body>
 <div class="topbar">Free shipping on orders above ₹1,999 · New Festive Collection is here</div>
 <header>
   <div class="container nav">
-    <a href="index.html" class="logo">Velora</a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="lookbook.html">Lookbook</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Velora Fashion"></a>
+    <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
     <a href="contact.html" class="btn">Order / Enquire</a>
     <button class="menu-btn" aria-label="Menu">☰</button>
   </div>
 </header>
 
-<section class="page-hero"><div class="container"><h1>Order or Enquire</h1><p>Tell us what you love. We will reply with availability, sizes and payment details.</p></div></section>
+<section class="page-hero"><div class="container"><h1>Contact</h1><p>Order or enquire, we reply fast</p></div></section>
 
 <section class="section">
   <div class="container contact-wrap">
     <div class="contact-info">
-      <img class="side-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800" alt="Velora boutique" loading="lazy">
-      <h3 style="margin-bottom:10px">Get in touch</h3>
+      <h3>Get in touch</h3>
+      <p>Tell us what you like and we will help you order.</p>
       <ul>
-        <li>📍 123 Main Street, Your City</li>
-        <li>📞 +91 98765 43210</li>
-        <li>✉️ hello@velorafashions.com</li>
-        <li>🕒 Mon–Sat: 10 AM – 8 PM</li>
+        <li>📞 Phone: <a href="tel:+919008650012">+91 90086 50012</a></li>
+        <li>✉️ Email: <a href="mailto:rakshitharakshitha02495@gmail.com">rakshitharakshitha02495@gmail.com</a></li>
+        <li>💬 WhatsApp: <a href="https://wa.me/919008650012" target="_blank">Chat with us</a></li>
+        <li>📸 Instagram: @velorafashions</li>
+        <li>🚚 Pan-India delivery</li>
+        <li>↩️ Size exchange within 7 days</li>
       </ul>
     </div>
-
     <form id="enquiry-form">
-      <div><label>Full Name *</label><input name="name" required></div>
-      <div><label>Phone / WhatsApp *</label><input name="phone" type="tel" required></div>
-      <div class="full"><label>Email</label><input name="email" type="email"></div>
-      <div>
-        <label>Category *</label>
-        <select name="category" required>
-          <option value="">Select</option><option>Dresses</option><option>Kurtis</option><option>Co-ord Sets</option><option>Tops</option><option>Custom / Bulk Order</option>
-        </select>
-      </div>
-      <div>
-        <label>Size</label>
-        <select name="size"><option value="">Select</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option></select>
-      </div>
-      <div class="full"><label>Product Name</label><input name="product"></div>
-      <div class="full"><label>City / Delivery Address</label><input name="address"></div>
-      <div class="full"><label>Message *</label><textarea name="message" rows="4" required></textarea></div>
-      <div class="full"><button class="btn" type="submit">Send Enquiry</button></div>
+      <div><label for="name">Name</label><input id="name" name="name" required></div>
+      <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
+      <div class="full"><label for="email">Email (optional)</label><input id="email" name="email" type="email"></div>
+      <div><label for="category">Category</label><select id="category" name="category"><option>Dresses</option><option>Kurtis</option><option>Co-ord Sets</option><option>Tops</option></select></div>
+      <div><label for="size">Size</label><select id="size" name="size"><option value="">Select</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></div>
+      <div class="full"><label for="product">Product</label><input id="product" name="product" placeholder="e.g. Floral Midi Dress"></div>
+      <div class="full"><label for="address">Delivery address</label><textarea id="address" name="address" rows="2"></textarea></div>
+      <div class="full"><label for="message">Message</label><textarea id="message" name="message" rows="3" required></textarea></div>
+      <div class="full"><button class="btn" type="submit">Send on WhatsApp</button></div>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="container foot">
-    <div><a href="index.html" class="logo">Velora</a><p style="margin-top:8px">Elegant womenswear made for everyday confidence.</p></div>
+    <div><a href="index.html" class="logo"><img src="logo.png" alt="Velora Fashion"></a><p style="margin-top:8px">Elegant womenswear made for everyday confidence.</p></div>
     <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Pinterest</a></li></ul></div>
   </div>
-  <p class="copy">© Velora Fashions. All rights reserved.</p>
+  <p class="copy">© Velora Fashion. All rights reserved.</p>
 </footer>
-<a class="wa" href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">💬</a>
+<a class="wa" href="https://wa.me/919008650012" target="_blank" aria-label="WhatsApp">💬</a>
 <script>
 // Scroll reveal animation
 const revealEls = document.querySelectorAll('.cat, .product, .feature, .about > *, .gallery img, .contact-info, .promo > *, .insta img, form, .section-title, .eyebrow');
@@ -261,7 +253,10 @@ function placeholder(img){
   const n = (img.alt||'').length % TONES.length, c = TONES[n];
   return "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c[0]+"'/%3E%3Cstop offset='1' stop-color='"+c[1]+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ccircle cx='320' cy='80' r='90' fill='white' fill-opacity='.18'/%3E%3Ccircle cx='60' cy='460' r='110' fill='white' fill-opacity='.14'/%3E%3Cg fill='%235b1a34' fill-opacity='.82'%3E"+SHAPES[kind].replace(/#/g,'%23')+"%3C/g%3E%3Ctext x='200' y='480' font-size='22' letter-spacing='8' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EVELORA%3C/text%3E%3C/svg%3E";
 }
-function fixImg(img){ if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img); }
+function fixImg(img){
+  if (img.dataset.remote && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.remote; return; }
+  if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img);
+}
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('error', () => fixImg(img));
   if (img.complete && img.naturalWidth === 0) fixImg(img);
@@ -300,7 +295,7 @@ if (form) {
     e.preventDefault();
     const d = new FormData(form);
     const msg =
-      `Hello Velora Fashions,%0A` +
+      `Hello Velora Fashion,%0A` +
       `Name: ${encodeURIComponent(d.get('name'))}%0A` +
       `Phone: ${encodeURIComponent(d.get('phone'))}%0A` +
       `Email: ${encodeURIComponent(d.get('email') || '-')}%0A` +
@@ -309,7 +304,7 @@ if (form) {
       `Product: ${encodeURIComponent(d.get('product') || '-')}%0A` +
       `Address: ${encodeURIComponent(d.get('address') || '-')}%0A` +
       `Message: ${encodeURIComponent(d.get('message'))}`;
-    window.open('https://wa.me/919876543210?text=' + msg, '_blank');
+    window.open('https://wa.me/919008650012?text=' + msg, '_blank');
   });
 }
 

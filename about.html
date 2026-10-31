@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="About Velora Fashions womenswear.">
-<title>About | Velora Fashions</title>
+<meta name="description" content="About Velora Fashion womenswear.">
+<title>About | Velora Fashion</title>
 <link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -198,8 +198,22 @@ footer a:hover{color:var(--rose);padding-left:4px}
     <div>
       <p class="eyebrow" style="text-align:left">Our Story</p>
       <h2>Made for everyday confidence</h2>
-      <p>Velora Fashions brings you soft fabrics, thoughtful fits and styles you will love wearing, from casual days to festive evenings.</p>
+      <p>Velora Fashion brings you soft fabrics, thoughtful fits and styles you will love wearing, from casual days to festive evenings.</p>
+      <p>We believe good clothes should feel as comfortable as they look. Every dress, kurti, co-ord set and top in our collection is chosen for its fabric, its fit and how easily it moves through your day.</p>
       <a href="shop.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">What We Offer</p>
+    <h2 class="section-title">Styles for every occasion</h2>
+    <div class="cat-grid">
+      <a class="cat" href="shop.html?cat=dresses"><img src="images/dress1.jpg" data-remote="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600" alt="Dresses"><div class="label"><h3>Dresses</h3><span>Explore →</span></div></a>
+      <a class="cat" href="shop.html?cat=kurtis"><img src="images/kurti1.jpg" data-remote="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600" alt="Kurtis"><div class="label"><h3>Kurtis</h3><span>Explore →</span></div></a>
+      <a class="cat" href="shop.html?cat=coords"><img src="images/coord1.jpg" data-remote="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600" alt="Co-ord Sets"><div class="label"><h3>Co-ord Sets</h3><span>Explore →</span></div></a>
+      <a class="cat" href="shop.html?cat=tops"><img src="images/top1.jpg" data-remote="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600" alt="Tops"><div class="label"><h3>Tops</h3><span>Explore →</span></div></a>
     </div>
   </div>
 </section>
@@ -213,15 +227,37 @@ footer a:hover{color:var(--rose);padding-left:4px}
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">How To Order</p>
+    <h2 class="section-title">Four simple steps</h2>
+    <div class="features">
+      <div class="feature"><div class="ico">1</div><h3>Choose your style</h3><p>Browse the shop or lookbook and pick what you love.</p></div>
+      <div class="feature"><div class="ico">2</div><h3>Send an enquiry</h3><p>Use the Enquire button or message us on WhatsApp.</p></div>
+      <div class="feature"><div class="ico">3</div><h3>Confirm size and address</h3><p>Share your size and delivery details with us.</p></div>
+      <div class="feature"><div class="ico">4</div><h3>Get it delivered</h3><p>Your order is packed safely and sent to your door.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;max-width:760px">
+    <p class="eyebrow">Our Promise</p>
+    <h2 class="section-title">Clothes you will love wearing</h2>
+    <p>We keep our collection small and carefully chosen, so stock is limited. Have a question about fabric, fit or sizing? Message us and we will help you pick the right piece.</p>
+    <p style="margin-top:26px"><a href="contact.html" class="btn">Contact Us</a> <a href="shop.html" class="btn btn-outline" style="margin-left:10px">Browse Shop</a></p>
+  </div>
+</section>
+
 <footer>
   <div class="container foot">
     <div><a href="index.html" class="logo"><img src="logo.png" alt="Velora Fashion"></a><p style="margin-top:8px">Elegant womenswear made for everyday confidence.</p></div>
     <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Pinterest</a></li></ul></div>
   </div>
-  <p class="copy">© Velora Fashions. All rights reserved.</p>
+  <p class="copy">© Velora Fashion. All rights reserved.</p>
 </footer>
-<a class="wa" href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">💬</a>
+<a class="wa" href="https://wa.me/919008650012" target="_blank" aria-label="WhatsApp">💬</a>
 <script>
 // Scroll reveal animation
 const revealEls = document.querySelectorAll('.cat, .product, .feature, .about > *, .gallery img, .contact-info, .promo > *, .insta img, form, .section-title, .eyebrow');
@@ -288,7 +324,7 @@ if (form) {
     e.preventDefault();
     const d = new FormData(form);
     const msg =
-      `Hello Velora Fashions,%0A` +
+      `Hello Velora Fashion,%0A` +
       `Name: ${encodeURIComponent(d.get('name'))}%0A` +
       `Phone: ${encodeURIComponent(d.get('phone'))}%0A` +
       `Email: ${encodeURIComponent(d.get('email') || '-')}%0A` +
@@ -297,7 +333,7 @@ if (form) {
       `Product: ${encodeURIComponent(d.get('product') || '-')}%0A` +
       `Address: ${encodeURIComponent(d.get('address') || '-')}%0A` +
       `Message: ${encodeURIComponent(d.get('message'))}`;
-    window.open('https://wa.me/919876543210?text=' + msg, '_blank');
+    window.open('https://wa.me/919008650012?text=' + msg, '_blank');
   });
 }
 

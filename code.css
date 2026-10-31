@@ -1,0 +1,65 @@
+/* Velora theme: matches logo (blush pink + black ink).
+   Link AFTER your existing stylesheet:
+   <link rel="stylesheet" href="velora-theme.css"> */
+
+:root{
+  --blush:#E7C9C9;      /* logo background */
+  --blush-light:#F6E9E8;
+  --blush-deep:#D6A9AD;
+  --rose:#B9757F;       /* accent for buttons/hover */
+  --ink:#141010;        /* logo black */
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  color:var(--ink);
+  background-color:var(--blush-light);
+  background-image:
+    url("images/logo-small.png"),
+    radial-gradient(120% 80% at 100% 0%, var(--blush) 0%, transparent 60%),
+    radial-gradient(90% 70% at 0% 100%, var(--blush-deep) 0%, transparent 55%);
+  background-repeat:no-repeat;
+  background-position:right -120px bottom -60px, 0 0, 0 0;
+  background-size:min(70vw,720px) auto, auto, auto;
+  background-attachment:fixed;
+}
+/* make the logo watermark very faint */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:var(--blush-light);opacity:.93;
+}
+
+/* Header + logo */
+header,.navbar,nav.top{
+  background:rgba(231,201,201,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(20,16,16,.15);
+}
+.logo img,.site-logo{height:56px;width:auto;display:block}
+.footer-logo{height:64px;width:auto}
+
+/* Top announcement bar */
+.announcement,.topbar,.promo-bar{background:var(--ink);color:var(--blush)}
+
+/* Headings echo the logo's serif */
+h1,h2,h3{font-family:"Cinzel","Cormorant Garamond",Georgia,serif;color:var(--ink);letter-spacing:.02em}
+
+/* Buttons */
+.btn,button,a.button,.hero a[href*="shop"],.hero a[href*="contact"]{
+  background:var(--ink);color:var(--blush);border:1px solid var(--ink);
+  border-radius:0;transition:background .2s,color .2s;
+}
+.btn:hover,button:hover,a.button:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn.secondary,.btn-outline{background:transparent;color:var(--ink)}
+
+/* Sections alternate in logo tones */
+section:nth-of-type(even){background:rgba(231,201,201,.55)}
+.card,.product,.category{background:var(--blush-light);border:1px solid rgba(20,16,16,.12)}
+
+/* Footer */
+footer{background:var(--ink);color:var(--blush)}
+footer a{color:var(--blush)}
+footer a:hover{color:#fff}
+
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}

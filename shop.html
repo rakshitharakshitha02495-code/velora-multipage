@@ -95,6 +95,13 @@ header p { margin: 0; color: var(--muted); font-size: 15px; letter-spacing: 0.04
 .sitenav a { color: var(--ink); text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 0; border-bottom: 2px solid transparent; }
 .sitenav a:hover, .sitenav a[aria-current="page"] { border-bottom-color: var(--ink); }
 .sitenav a:focus-visible, .brand:focus-visible, .enq:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.add-cart { font: 500 12px/1 var(--font-body, inherit); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); background: transparent; border: 2px solid var(--ink); border-radius: 999px; padding: 10px 16px; cursor: pointer; align-self: flex-start; margin-top: 4px; }
+.add-cart:hover { background: var(--ink); color: #fff; }
+.add-cart:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.acts { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 6px; }
+.acts .enq, .acts .add-cart { margin-top: 0; }
+.lb-info .enq { margin-top: 0; }
+.lb-info .add-cart { margin: 10px 10px 0 0; padding: 14px 28px; font-size: 13px; }
 .enq { align-self: flex-start; margin-top: 6px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--pill-on-fg); background: var(--pill-on-bg); padding: 9px 18px; border-radius: 999px; }
 .foot { max-width: 1240px; margin: 40px auto 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; letter-spacing: 0.06em; }
 .foot a { color: var(--muted); text-decoration: none; margin-right: 18px; }
@@ -179,7 +186,7 @@ body { padding-top: 0; }
       <h2 id="lbname"></h2>
       <div class="price" id="lbprice"></div>
       <span class="sizes">S  M  L  XL</span>
-      <a class="enq" id="lbenq" href="contact.html">Enquire</a>
+      <button type="button" class="add-cart" id="lbadd">Add to Cart</button> <a class="enq" id="lbenq" href="contact.html">Enquire</a>
       <span class="lb-pos" id="lbpos"></span>
     </div>
   </div>
@@ -302,7 +309,8 @@ function cardHTML(cat, p) {
     '<div class="info"><h2 class="name">' + p[0] + '</h2>' +
     '<div class="price"><b>' + inr(p[1]) + '</b><s>' + inr(p[2]) + '</s><em>' + off + '% off</em></div>' +
     '<span class="sizes">S  M  L  XL</span>' +
-    '<a class="enq" href="contact.html?product=' + encodeURIComponent(p[0]) + '">Enquire</a></div></article>';
+    '<div class="acts"><button type="button" class="add-cart" data-name="' + p[0] + '" data-price="' + inr(p[1]) + '">Add to Cart</button>' +
+    '<a class="enq" href="contact.html?product=' + encodeURIComponent(p[0]) + '">Enquire</a></div></div></article>';
 }
 
 function render() {
@@ -343,6 +351,7 @@ function lbShow(i) {
   document.getElementById('lbcat').textContent = LABELS[cat];
   document.getElementById('lbname').textContent = p[0];
   document.getElementById('lbprice').innerHTML = '<b>' + inr(p[1]) + '</b><s>' + inr(p[2]) + '</s><em>' + off + '% off</em>';
+  var ab = document.getElementById('lbadd'); ab.dataset.name = p[0]; ab.dataset.price = inr(p[1]);
   document.getElementById('lbenq').href = 'contact.html?product=' + encodeURIComponent(p[0]);
   document.getElementById('lbpos').textContent = (lbIdx + 1) + ' / ' + view.length;
 }
@@ -356,7 +365,7 @@ function lbClose() {
   if (lastCard) lastCard.focus();
 }
 document.getElementById('grid').addEventListener('click', function (ev) {
-  if (ev.target.closest('.enq')) return;
+  if (ev.target.closest('.enq, .add-cart')) return;
   var c = ev.target.closest('.card');
   if (c) lbOpen(+c.dataset.i, c);
 });

@@ -32,7 +32,7 @@
   function add(item) {
     var list = load();
     var found = list.find(function (p) { return p.id === item.id; });
-    if (found) found.qty += 1;
+    if (found) { found.qty += 1; if (!found.img && item.img) found.img = item.img; }
     else { item.qty = 1; list.push(item); }
     save(list);
     updateCount();

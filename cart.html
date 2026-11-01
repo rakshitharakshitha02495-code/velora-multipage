@@ -112,6 +112,7 @@ form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18p
 .cartwrap { max-width: 860px; margin: 0 auto; padding-block: 8px 24px; }
 .citem { display: grid; grid-template-columns: 96px 1fr auto; gap: 18px; align-items: center; padding: 18px; margin-bottom: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; }
 .citem img { width: 96px; height: 120px; object-fit: cover; border-radius: 16px; background: var(--field); }
+.noimg { width: 96px; height: 120px; border-radius: 16px; background: var(--field); }
 .citem h3 { font-size: 24px; line-height: 1.1; margin-bottom: 6px; }
 .citem .pr { color: var(--muted); margin: 0 0 10px; }
 .qty { display: inline-flex; align-items: center; gap: 4px; border: 2px solid var(--line); border-radius: 999px; padding: 2px; }
@@ -131,7 +132,7 @@ form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18p
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .clr { font: 500 13px/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; background: none; border: 2px solid var(--line); color: var(--ink); border-radius: 999px; padding: 16px 24px; cursor: pointer; }
 .clr:hover { border-color: var(--ink); }
-@media (max-width: 560px) { .citem { grid-template-columns: 72px 1fr; } .citem img { width: 72px; height: 92px; } .cside { grid-column: 1 / -1; grid-template-columns: 1fr auto; justify-items: start; align-items: center; text-align: left; } }
+@media (max-width: 560px) { .citem { grid-template-columns: 72px 1fr; } .citem img, .noimg { width: 72px; height: 92px; } .cside { grid-column: 1 / -1; grid-template-columns: 1fr auto; justify-items: start; align-items: center; text-align: left; } }
 </style>
 </head>
 <body>
@@ -181,7 +182,7 @@ form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18p
     var total = 0;
     var items = list.map(function (p) {
       var line = num(p.price) * p.qty; total += line;
-      return '<div class="citem"><img src="' + esc(p.img || '') + '" alt="' + esc(p.name) + '">' +
+      return '<div class="citem">' + (p.img ? '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : '<div class="noimg" aria-hidden="true"></div>') +
         '<div><h3>' + esc(p.name) + '</h3><p class="pr">' + esc(p.price) + '</p>' +
         '<div class="qty"><button data-a="dec" data-id="' + esc(p.id) + '" aria-label="Decrease quantity">\u2212</button><span>' + p.qty + '</span><button data-a="inc" data-id="' + esc(p.id) + '" aria-label="Increase quantity">+</button></div></div>' +
         '<div class="cside"><div class="lt">' + fmt(line) + '</div><button class="rm" data-a="rm" data-id="' + esc(p.id) + '">Remove</button></div></div>';

@@ -1,13 +1,23 @@
 (function () {
   var KEY = 'velora_cart';
 
+  function slug(t) { return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function load() {
-    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; }
+    var raw; try { raw = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { raw = []; }
+    // repair older saved items: give every item an id and merge duplicates
+    var out = [], seen = {};
+    raw.forEach(function (p) {
+      if (!p || !p.name) return;
+      p.id = p.id || slug(p.name);
+      p.qty = Math.max(1, parseInt(p.qty, 10) || 1);
+      if (seen[p.id]) { seen[p.id].qty += p.qty; if (!seen[p.id].img && p.img) seen[p.id].img = p.img; }
+      else { seen[p.id] = p; out.push(p); }
+    });
+    return out;
   }
   function save(list) {
     try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
   }
-  function slug(t) { return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 
   function updateCount() {
     var total = load().reduce(function (sum, p) { return sum + p.qty; }, 0);

@@ -1,76 +1,78 @@
-/* Velora theme: logo pink + logo black. Load AFTER the page's inline <style>. */
+/* Velora theme: cream + gold page, logo-pink header/footer (logo unchanged).
+   Load AFTER the page's inline <style>. */
 :root{
-  --bg:#E7C9C9;          /* exact logo background */
+  --bg:#FAF3E8;          /* cream page */
+  --cream-deep:#F3E7D3;
+  --card:#FFFBF3;
   --ink:#141010;         /* logo black */
-  --muted:#5a4649;
-  --wine:#141010;        /* old wine -> logo black */
+  --muted:#5f5340;
+  --wine:#141010;        /* old wine -> black */
   --wine-d:#141010;
-  --rose:#7E3F4A;        /* deep rose accent */
-  --blush:#F3E1E0;
-  --card:#F8ECEB;
-  --line:#CFA8AB;
-  --shadow:0 18px 45px -18px rgba(20,16,16,.35);
+  --rose:#9A6F1F;        /* gold accent */
+  --gold-light:#D9B26A;
+  --blush:#F3E7D3;
+  --line:#E3D2B0;
+  --logo-pink:#E7C9C9;   /* exact logo background */
+  --shadow:0 18px 45px -18px rgba(60,40,10,.30);
 }
-body{
-  background-color:#E7C9C9;
-  background-image:
-    radial-gradient(70% 45% at 100% 0%,#F1DEDD 0%,transparent 65%),
-    radial-gradient(60% 45% at 0% 100%,#DDB5B8 0%,transparent 65%);
-  background-attachment:fixed;
-  color:var(--ink);
-}
+body{background:var(--bg);color:var(--ink)}
 
-/* top bar, header, logo */
-.topbar{background:var(--ink);color:#E7C9C9}
-header{background:#E7C9C9;backdrop-filter:none;border-bottom:1px solid rgba(20,16,16,.18)}
+/* ---- UPPER LAYER: unchanged (logo pink header + black top bar) ---- */
+.topbar{background:var(--ink);color:var(--logo-pink)}
+header{background:var(--logo-pink);backdrop-filter:none;border-bottom:1px solid rgba(20,16,16,.18)}
 .nav{height:92px}
 .logo img{height:76px;width:auto;display:block}
 footer .logo img{height:96px}
 .nav ul a.active{color:var(--ink)}
-@media(max-width:860px){.nav{height:80px}.nav ul{top:80px}.logo img{height:62px}}
+@media(max-width:860px){.nav{height:80px}.nav ul{top:80px;background:var(--logo-pink)}.logo img{height:62px}}
 
-/* hero + inner page banners: pink design, no dark photo overlay */
+/* ---- Page body: cream + gold ---- */
 .hero,.page-hero{
   color:var(--ink);
   background:
-    radial-gradient(520px 520px at 88% 20%,rgba(255,255,255,.35),transparent 70%),
-    radial-gradient(620px 620px at 8% 110%,#D6A9AD,transparent 70%),
-    linear-gradient(135deg,#EBD2D1 0%,#E7C9C9 55%,#DDB5B8 100%);
+    radial-gradient(520px 520px at 90% 15%,rgba(217,178,106,.35),transparent 70%),
+    linear-gradient(135deg,#FBF5EA 0%,#F3E7D3 100%);
+  border-bottom:1px solid var(--line);
 }
-.hero .tag{color:var(--ink);border-color:var(--ink)}
+.hero .tag{color:var(--rose);border-color:var(--rose)}
 .hero h1 em{color:var(--rose)}
-.hero p,.page-hero p{color:#3a2b2e}
-.hero .btn{background:var(--ink);border-color:var(--ink);color:#E7C9C9}
+.hero p,.page-hero p{color:#4a3f2e}
+
+.btn{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn-outline{background:transparent;color:var(--ink)}
+.btn-outline:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.hero .btn{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .hero .btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
 .hero .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
-.hero .btn-outline:hover{background:var(--ink);color:#E7C9C9}
+.hero .btn-outline:hover{background:var(--ink);color:var(--bg)}
 
-/* buttons */
-.btn{color:#E7C9C9}
-.btn:hover{color:#fff}
-.btn-outline{color:var(--ink)}
-.btn-outline:hover{color:#E7C9C9}
+.section,.section[style]{background:var(--bg) !important}
+.section:nth-of-type(even),.section[style]{background:var(--cream-deep) !important}
 
-/* sections and cards */
-.section[style]{background:#F3E1E0 !important}
 .product,.product .info,.feature,form{background:var(--card)}
-.feature .ico{background:#E7C9C9}
+.product,.feature,form{border:1px solid var(--line)}
+.feature .ico{background:var(--cream-deep)}
+.section-title::after{background:linear-gradient(90deg,transparent,var(--rose),transparent)}
 .cat .label{background:linear-gradient(transparent,rgba(20,16,16,.85))}
-.cat .label span{color:#E7C9C9}
-input,select,textarea{background:#F3E1E0}
-input:focus,select:focus,textarea:focus{background:#fff}
+.cat .label span{color:var(--gold-light)}
+.filters button{color:var(--muted);border-color:var(--line)}
+.filters button.active,.filters button:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.badge{background:var(--ink);color:var(--gold-light)}
+input,select,textarea{background:var(--card);border-color:var(--line)}
+input:focus,select:focus,textarea:focus{background:#fff;border-color:var(--rose);box-shadow:0 0 0 4px rgba(154,111,31,.18)}
 
-/* promo + contact panel in logo black */
-.promo,.contact-info{background:linear-gradient(150deg,#141010,#2b2022);color:#E7C9C9}
-.promo-text p,.contact-info li{color:#E7C9C9}
-.promo-text .btn{background:#E7C9C9;border-color:#E7C9C9;color:var(--ink)}
-.promo-text .btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
-.promo-text .tag{color:#E7C9C9}
+/* black panels get gold highlights */
+.promo,.contact-info{background:linear-gradient(150deg,#141010,#2b2318);color:var(--cream-deep)}
+.promo-text p,.contact-info li{color:var(--cream-deep)}
+.promo-text .tag{color:var(--gold-light)}
+.promo-text .btn{background:var(--gold-light);border-color:var(--gold-light);color:var(--ink)}
+.promo-text .btn:hover{background:#fff;border-color:#fff;color:var(--ink)}
 
-/* footer in logo pink */
-footer{background:#E7C9C9;color:var(--ink);border-top:1px solid rgba(20,16,16,.18)}
-footer h4{color:var(--rose)}
-footer a:hover{color:var(--rose)}
+/* ---- Footer: logo pink so the logo blends in ---- */
+footer{background:var(--logo-pink);color:var(--ink);border-top:1px solid rgba(20,16,16,.18)}
+footer h4{color:#6B4A12}
+footer a:hover{color:#6B4A12}
 .copy{color:#5a4649;border-top-color:rgba(20,16,16,.18)}
 
 :focus-visible{outline:2px solid var(--rose);outline-offset:3px}

@@ -1,18 +1,18 @@
 /* Velora theme: cream + gold page, logo-pink header/footer (logo unchanged).
    Load AFTER the page's inline <style>. */
 :root{
-  --bg:#FAF3E8;          /* cream page */
+  --bg:#FAF3E8;
   --cream-deep:#F3E7D3;
   --card:#FFFBF3;
-  --ink:#141010;         /* logo black */
+  --ink:#141010;
   --muted:#5f5340;
-  --wine:#141010;        /* old wine -> black */
+  --wine:#141010;
   --wine-d:#141010;
-  --rose:#9A6F1F;        /* gold accent */
+  --rose:#9A6F1F;
   --gold-light:#D9B26A;
   --blush:#F3E7D3;
   --line:#E3D2B0;
-  --logo-pink:#E7C9C9;   /* exact logo background */
+  --logo-pink:#E7C9C9;
   --shadow:0 18px 45px -18px rgba(60,40,10,.30);
 }
 body{background:var(--bg);color:var(--ink)}
@@ -61,18 +61,3 @@ footer .logo img{height:96px}
 .badge{background:var(--ink);color:var(--gold-light)}
 input,select,textarea{background:var(--card);border-color:var(--line)}
 input:focus,select:focus,textarea:focus{background:#fff;border-color:var(--rose);box-shadow:0 0 0 4px rgba(154,111,31,.18)}
-
-/* black panels get gold highlights */
-.promo,.contact-info{background:linear-gradient(150deg,#141010,#2b2318);color:var(--cream-deep)}
-.promo-text p,.contact-info li{color:var(--cream-deep)}
-.promo-text .tag{color:var(--gold-light)}
-.promo-text .btn{background:var(--gold-light);border-color:var(--gold-light);color:var(--ink)}
-.promo-text .btn:hover{background:#fff;border-color:#fff;color:var(--ink)}
-
-/* ---- Footer: logo pink so the logo blends in ---- */
-footer{background:var(--logo-pink);color:var(--ink);border-top:1px solid rgba(20,16,16,.18)}
-footer h4{color:#6B4A12}
-footer a:hover{color:#6B4A12}
-.copy{color:#5a4649;border-top-color:rgba(20,16,16,.18)}
-
-:focus-visible{outline:2px solid var(--rose);outline-offset:3px}

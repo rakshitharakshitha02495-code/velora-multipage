@@ -16,31 +16,60 @@ a{color:inherit;text-decoration:none}
 ul{list-style:none}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.15}
 .container{width:min(1180px,92%);margin:auto}
-.section{padding:90px 0}
+.section{padding:80px 0}
 .eyebrow{display:block;text-align:center;color:var(--rose);text-transform:uppercase;letter-spacing:5px;font-size:.74rem;font-weight:500}
-.section-title{text-align:center;font-size:clamp(2rem,4vw,3rem);margin:8px 0 46px;color:var(--wine)}
+.section-title{text-align:center;font-size:clamp(2rem,4vw,3rem);margin:8px 0 14px;color:var(--wine)}
 .btn{display:inline-block;background:var(--wine);color:#fff;padding:13px 32px;border-radius:50px;border:1.5px solid var(--wine);cursor:pointer;font:500 .82rem 'Jost',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:.35s}
 .btn:hover{background:var(--rose);border-color:var(--rose)}
-.btn-outline{background:transparent;color:var(--wine)}
-.btn-outline:hover{background:var(--wine);color:#fff}
 .topbar{background:var(--wine-d);color:#f3dde0;text-align:center;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;padding:9px 10px}
 header{background:var(--bg);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.nav ul{display:flex;gap:38px}
+.nav ul{display:flex;gap:38px;margin:0 auto}
 .nav ul a{font-size:.8rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;padding:6px 0}
-.nav ul a.active{color:var(--wine);border-bottom:1.5px solid var(--rose)}
 .menu-btn{display:none;background:none;border:0;font-size:1.8rem;cursor:pointer}
+
+/* ---- Blog navigation button (right side) ---- */
+.blog-btn{display:inline-flex;align-items:center;gap:9px;margin-right:12px;padding:11px 24px;border-radius:50px;border:1.5px solid var(--rose);background:linear-gradient(135deg,#fffaf3,var(--blush));color:var(--wine);font:500 .8rem 'Jost',sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 8px 20px -12px rgba(91,26,52,.55);transition:.35s}
+.blog-btn svg{width:16px;height:16px;flex:none}
+.blog-btn:hover,.blog-btn.active{background:linear-gradient(135deg,var(--rose),var(--wine));border-color:transparent;color:#fff;transform:translateY(-2px)}
+
 .page-hero{text-align:center;color:#fff;padding:100px 0;background:linear-gradient(rgba(63,17,36,.72),rgba(63,17,36,.72)),url('images/banner.jpg') center/cover}
 .page-hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
 .page-hero p{color:var(--blush);letter-spacing:2px;font-weight:300;margin-top:8px}
+
+/* ---- Blog page ---- */
+.feature-post{display:grid;grid-template-columns:1.1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:56px}
+.feature-post .post-img{min-height:380px;height:100%}
+.feature-post .post-body{padding:46px 44px;justify-content:center}
+.feature-post h3{font-size:clamp(1.8rem,3vw,2.5rem)}
+.label{align-self:flex-start;background:var(--rose);color:#fff;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:50px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:34px 0 42px}
+.chips button{border:1.5px solid var(--line);background:transparent;padding:9px 24px;border-radius:50px;cursor:pointer;font:500 .78rem 'Jost',sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:.3s}
+.chips button.active,.chips button:hover{background:var(--wine);border-color:var(--wine);color:#fff}
 .posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px}
-.post{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.post img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--blush)}
+.post{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.4s}
+.posts .post:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.post.hide{display:none}
+.post-img{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blush),#f6e6d8)}
+.post-img img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s}
+.posts .post-img img{aspect-ratio:3/4}
+.posts .post:hover .post-img img{transform:scale(1.05)}
+.post-tag{position:absolute;left:16px;top:16px;background:var(--wine);color:#fff;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:50px}
 .post-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
-.post-tag{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--rose);font-weight:500}
-.post h3{font-size:1.5rem}
-.post p{color:var(--muted);font-weight:300;flex:1}
-.post .btn{align-self:flex-start;padding:10px 24px;font-size:.74rem}
+.read{font-size:.78rem;letter-spacing:1px;color:var(--muted)}
+.post h3{font-size:1.55rem;color:var(--wine)}
+.post p{color:var(--muted);font-weight:300}
+details summary{cursor:pointer;color:var(--rose);font-weight:500;font-size:.85rem;letter-spacing:1px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:" +"}
+details[open] summary::after{content:" −"}
+.more{margin-top:8px}
+.post-link{margin-top:auto;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:var(--wine);border-bottom:1.5px solid var(--rose);align-self:flex-start;padding-bottom:2px}
+.cta{margin-top:64px;text-align:center;background:linear-gradient(150deg,var(--wine),var(--wine-d));color:#f3e6e8;border-radius:24px;padding:54px 24px}
+.cta h2{font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;margin-bottom:8px}
+.cta p{max-width:520px;margin:0 auto 24px;font-weight:300}
+.cta .btn{background:var(--rose);border-color:var(--rose)}
+
 footer{background:var(--wine-d);color:#e6d3d8;padding:70px 0 22px;margin-top:40px}
 .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
 footer h4{font:600 1.3rem 'Cormorant Garamond',serif;color:var(--rose);letter-spacing:2px;margin-bottom:14px}
@@ -48,12 +77,15 @@ footer li{margin-bottom:8px;font-size:.92rem;font-weight:300}
 .copy{text-align:center;font-size:.78rem;letter-spacing:2px;margin-top:44px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;color:#b99aa4}
 .wa{position:fixed;right:22px;bottom:22px;background:#25d366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 10px 26px -6px rgba(0,0,0,.4);z-index:60}
 @media(max-width:860px){
-  .section{padding:64px 0}
+  .section{padding:60px 0}
   .menu-btn{display:block}
-  .nav ul{position:absolute;top:78px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 6%;display:none;border-bottom:1px solid var(--line)}
+  .nav ul{position:absolute;top:78px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 6%;display:none;border-bottom:1px solid var(--line);margin:0}
   .nav ul.open{display:flex}
   .nav ul li{padding:12px 0;border-bottom:1px solid var(--line)}
   .nav>.btn{display:none}
+  .blog-btn{margin-left:auto;margin-right:6px;padding:8px 16px}
+  .feature-post{grid-template-columns:1fr}
+  .feature-post .post-body{padding:28px 24px}
   .foot{grid-template-columns:1fr}
 }
 </style>
@@ -68,85 +100,101 @@ footer li{margin-bottom:8px;font-size:.92rem;font-weight:300}
       <li><a href="index.html">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="lookbook.html">Lookbook</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <a href="blog.html" class="blog-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Blog</a>
     <a href="contact.html" class="btn">Order / Enquire</a>
     <button class="menu-btn" aria-label="Menu">☰</button>
   </div>
 </header>
 
-<section class="page-hero"><div class="container"><h1>Blog</h1><p>Style tips, fabric care and festive ideas</p></div></section>
+<section class="page-hero"><div class="container"><h1>Our Blog</h1><p>Style tips, fabric care and festive ideas</p></div></section>
 
 <section class="section">
   <div class="container">
     <p class="eyebrow">Velora Journal</p>
-    <h2 class="section-title">Latest from the blog</h2>
-    <div class="posts">
+    <h2 class="section-title">Stories and style tips</h2>
 
-      <article class="post">
-        <img src="images/kurti1.jpg" data-remote="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700" alt="5 Ways to Style a Kurti" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Style Tips</span>
-          <h3>5 Ways to Style a Kurti</h3>
-          <p>Pair it with jeans, palazzos, leggings or a skirt. Add jhumkas for the day, or a dupatta for the evening. One kurti can give you five different looks.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
+    <article class="feature-post post">
+      <div class="post-img"><img src="images/kurti1.jpg" data-remote="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=900" alt="5 Ways to Style a Kurti"><span class="post-tag">Style Tips</span></div>
+      <div class="post-body">
+        <span class="label">Featured</span>
+        <span class="read">2 min read</span>
+        <h3>5 Ways to Style a Kurti</h3>
+        <p>Pair it with jeans, palazzos, leggings or a skirt. Add jhumkas for the day, or a dupatta for the evening.</p>
+        <p>Jeans give a modern, casual look. Palazzos and a dupatta suit festive days. A long kurti over leggings is the easiest everyday outfit. Add a belt to a straight kurti for shape.</p>
+        <a class="btn" href="shop.html" style="align-self:flex-start;margin-top:8px">Shop kurtis</a>
+      </div>
+    </article>
 
-      <article class="post">
-        <img src="images/look2.jpg" data-remote="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700" alt="How to Choose the Right Size" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Size Guide</span>
-          <h3>How to Choose the Right Size</h3>
-          <p>Measure your bust, waist and hips, then compare with our size range (XS to 3XL). If you are between two sizes, pick the larger one. Exchange is free within 7 days.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
-
-      <article class="post">
-        <img src="images/dress2.jpg" data-remote="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=700" alt="Festive Outfit Ideas" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Festive</span>
-          <h3>Festive Outfit Ideas</h3>
-          <p>Anarkalis, satin dresses and statement co-ord sets are perfect for festive evenings. Choose rich colours and keep jewellery simple.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
-
-      <article class="post">
-        <img src="images/coord1.jpg" data-remote="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700" alt="Care Guide for Soft Fabrics" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Fabric Care</span>
-          <h3>Care Guide for Soft Fabrics</h3>
-          <p>Wash cotton and linen in cold water, dry in shade and iron on the reverse side. Hand wash satin gently to keep it smooth.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
-
-      <article class="post">
-        <img src="images/dress1.jpg" data-remote="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=700" alt="Dresses for Every Occasion" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Dresses</span>
-          <h3>Dresses for Every Occasion</h3>
-          <p>A floral midi works for a casual lunch, a satin slip for a dinner. Add a belt or a jacket to change the look.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
-
-      <article class="post">
-        <img src="images/coord2.jpg" data-remote="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=700" alt="Easy Co-ord Set Styling" loading="lazy">
-        <div class="post-body">
-          <span class="post-tag">Co-ords</span>
-          <h3>Easy Co-ord Set Styling</h3>
-          <p>Wear the set together for a clean look, or split it. The top works with jeans, and the bottom with a plain shirt.</p>
-          <a class="btn btn-outline" href="shop.html">Shop the look</a>
-        </div>
-      </article>
-
+    <div class="chips" id="chips">
+      <button class="active" data-f="all">All</button>
+      <button data-f="size">Size Guide</button>
+      <button data-f="festive">Festive</button>
+      <button data-f="care">Fabric Care</button>
+      <button data-f="dress">Dresses</button>
+      <button data-f="coord">Co-ords</button>
     </div>
-    <p style="text-align:center;margin-top:40px"><a href="contact.html" class="btn">Ask us for styling help</a></p>
+
+    <div class="posts" id="posts">
+      <article class="post" data-cat="size">
+        <div class="post-img"><img src="images/top1.jpg" data-remote="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=700" alt="How to Choose the Right Size"><span class="post-tag">Size Guide</span></div>
+        <div class="post-body">
+          <span class="read">2 min read</span>
+          <h3>How to Choose the Right Size</h3>
+          <p>Measure your bust, waist and hips, then compare with our size range (XS to 3XL).</p>
+          <details><summary>Read more</summary><p class="more">Use a soft tape and measure over light clothing. If you are between two sizes, pick the larger one. Not sure? Message us on WhatsApp. Size exchange is free within 7 days.</p></details>
+          <a class="post-link" href="shop.html">Shop the look</a>
+        </div>
+      </article>
+      <article class="post" data-cat="festive">
+        <div class="post-img"><img src="images/dress2.jpg" data-remote="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=700" alt="Festive Outfit Ideas"><span class="post-tag">Festive</span></div>
+        <div class="post-body">
+          <span class="read">2 min read</span>
+          <h3>Festive Outfit Ideas</h3>
+          <p>Anarkalis, satin dresses and statement co-ord sets are perfect for festive evenings.</p>
+          <details><summary>Read more</summary><p class="more">Pick rich colours and keep jewellery simple. A satin dress needs only earrings. An anarkali looks best with a light dupatta. Order early because festive stock is limited.</p></details>
+          <a class="post-link" href="shop.html">Shop the look</a>
+        </div>
+      </article>
+      <article class="post" data-cat="care">
+        <div class="post-img"><img src="images/coord1.jpg" data-remote="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700" alt="Care Guide for Soft Fabrics"><span class="post-tag">Fabric Care</span></div>
+        <div class="post-body">
+          <span class="read">2 min read</span>
+          <h3>Care Guide for Soft Fabrics</h3>
+          <p>Wash cotton and linen in cold water, dry in shade and iron on the reverse side.</p>
+          <details><summary>Read more</summary><p class="more">Hand wash satin gently and never wring it. Turn printed clothes inside out before washing. Dry in shade to keep colours bright.</p></details>
+          <a class="post-link" href="shop.html">Shop the look</a>
+        </div>
+      </article>
+      <article class="post" data-cat="dress">
+        <div class="post-img"><img src="images/dress1.jpg" data-remote="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=700" alt="Dresses for Every Occasion"><span class="post-tag">Dresses</span></div>
+        <div class="post-body">
+          <span class="read">2 min read</span>
+          <h3>Dresses for Every Occasion</h3>
+          <p>A floral midi works for a casual lunch, a satin slip for a dinner.</p>
+          <details><summary>Read more</summary><p class="more">Add a belt or a jacket to change the look. Sneakers keep a midi relaxed, heels make it dressy. One dress, many outfits.</p></details>
+          <a class="post-link" href="shop.html">Shop the look</a>
+        </div>
+      </article>
+      <article class="post" data-cat="coord">
+        <div class="post-img"><img src="images/coord2.jpg" data-remote="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=700" alt="Easy Co-ord Set Styling"><span class="post-tag">Co-ords</span></div>
+        <div class="post-body">
+          <span class="read">2 min read</span>
+          <h3>Easy Co-ord Set Styling</h3>
+          <p>Wear the set together for a clean look, or split it into two outfits.</p>
+          <details><summary>Read more</summary><p class="more">The top works with jeans, and the bottom works with a plain shirt. That is two sets of looks from one purchase.</p></details>
+          <a class="post-link" href="shop.html">Shop the look</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="cta">
+      <h2>Need help choosing?</h2>
+      <p>Tell us the occasion and your size, and we will suggest the right outfit.</p>
+      <a class="btn" href="https://wa.me/919008650012" target="_blank">Chat on WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -161,17 +209,42 @@ footer li{margin-bottom:8px;font-size:.92rem;font-weight:300}
 <a class="wa" href="https://wa.me/919008650012" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
-// Mobile menu
-var menuBtn = document.querySelector('.menu-btn');
-var navList = document.querySelector('.nav ul');
-if (menuBtn) menuBtn.addEventListener('click', function(){ navList.classList.toggle('open'); });
+var menuBtn=document.querySelector('.menu-btn'),navList=document.querySelector('.nav ul');
+if(menuBtn)menuBtn.addEventListener('click',function(){navList.classList.toggle('open')});
 
-// If a photo is missing, use the backup photo link
-document.querySelectorAll('img[data-remote]').forEach(function(img){
-  img.addEventListener('error', function(){
-    if (!img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.remote; }
+// Image fallback: if a photo fails to load, show an elegant Velora illustration
+const SHAPES = {
+  dress:'<path d="M175 105 L200 85 L225 105 L219 195 Q298 320 318 440 L82 440 Q102 320 181 195 Z"/><path d="M200 85 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  kurti:'<path d="M168 105 L200 88 L232 105 L240 175 L252 440 L214 440 L200 330 L186 440 L148 440 L160 175 Z"/><path d="M200 88 L200 60 Q200 48 212 48" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  top:'<path d="M150 120 L200 98 L250 120 L292 170 L262 200 L242 178 L242 330 L158 330 L158 178 L138 200 L108 170 Z"/><path d="M200 98 L200 66 Q200 54 212 54" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>',
+  coord:'<path d="M165 100 L200 85 L235 100 L228 215 L172 215 Z"/><path d="M172 235 L228 235 L262 440 L138 440 Z"/><path d="M200 85 L200 58 Q200 46 212 46" fill="none" stroke="%235b1a34" stroke-width="5" stroke-linecap="round"/>'
+};
+const TONES = [['%23f3dde0','%23c9956b'],['%23ead7dc','%23a3335c'],['%23f6e6d8','%23c9956b'],['%23e8d0d8','%235b1a34']];
+function placeholder(img){
+  const t = ((img.alt||'') + ' ' + (img.src||'')).toLowerCase();
+  const kind = /kurti|anarkali/.test(t) ? 'kurti' : /top|shirt/.test(t) ? 'top' : /co-ord|coord/.test(t) ? 'coord' : 'dress';
+  const n = (img.alt||'').length % TONES.length, c = TONES[n];
+  return "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c[0]+"'/%3E%3Cstop offset='1' stop-color='"+c[1]+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23g)'/%3E%3Ccircle cx='320' cy='80' r='90' fill='white' fill-opacity='.18'/%3E%3Ccircle cx='60' cy='460' r='110' fill='white' fill-opacity='.14'/%3E%3Cg fill='%235b1a34' fill-opacity='.82'%3E"+SHAPES[kind].replace(/#/g,'%23')+"%3C/g%3E%3Ctext x='200' y='480' font-size='22' letter-spacing='8' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EVELORA%3C/text%3E%3C/svg%3E";
+}
+function fixImg(img){
+  if (img.dataset.remote && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.remote; return; }
+  if (img.dataset.fb) return; img.dataset.fb = 1; img.src = placeholder(img);
+}
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', () => fixImg(img));
+  if (img.complete && img.naturalWidth === 0) fixImg(img);
+});
+
+
+document.querySelectorAll('#chips button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('#chips button').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    var f=b.dataset.f;
+    document.querySelectorAll('#posts .post').forEach(function(p){
+      p.classList.toggle('hide',f!=='all'&&p.dataset.cat!==f);
+    });
   });
-  if (img.complete && img.naturalWidth === 0 && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.remote; }
 });
 </script>
 </body>

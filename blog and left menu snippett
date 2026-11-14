@@ -1,0 +1,21 @@
+<script>
+/* Velora: left-aligns the header menu and adds a Blog link after Lookbook */
+(function(){
+  var st=document.createElement('style');
+  st.textContent='header.site,.site{justify-content:flex-start !important;gap:12px 56px !important}';
+  document.head.appendChild(st);
+  var nav=document.querySelector('header nav');
+  if(!nav||nav.querySelector('a[href="blog.html"]'))return;
+  var a=document.createElement('a');
+  a.href='blog.html';a.textContent='Blog';
+  var look=nav.querySelector('a[href$="lookbook.html"]');
+  if(!look){nav.appendChild(a);return;}
+  var host=look.parentNode;
+  if(host.tagName==='LI'){
+    var li=document.createElement('li');li.appendChild(a);
+    host.parentNode.insertBefore(li,host.nextSibling);
+  }else{
+    host.insertBefore(a,look.nextSibling);
+  }
+})();
+</script>
